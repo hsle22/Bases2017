@@ -1,0 +1,7 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{3}{section.1}
+\contentsline {section}{\numberline {2}Asumimos que...}{4}{section.2}
+\contentsline {section}{\numberline {3}Modelo de Entidad Relaci\IeC {\'o}n y Modelo Relacional}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Modelo de Entidad Relaci\IeC {\'o}n}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Modelo Relacional}{5}{subsection.3.2}
+\contentsline {section}{\numberline {4}Conclusiones}{6}{section.4}
