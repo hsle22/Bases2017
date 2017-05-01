@@ -6,3 +6,24 @@ A continuación, se mostrarán el Modelo de Entidad Relación y el Modelo Relaci
 
 \subsection{Modelo Relacional}
 
+Escuela(\uline{idEscuela}, nombre, pais, oro, plata, bronce, \dotuline{idPais})
+
+
+Maestro(\uline{nroPlacaInstructor}, nombre, apellido, graduacion, \dotuline{idEscuela}, )
+
+Pais(\ulilne{idPais}, nombre)
+
+Alumno(\uline{dniAlumno}, nombre, apellido, fechaNacimiento, genero, graduacion, nroCertITF, peso, foto, \dotuline{idEscuela})
+
+InscripcionAlumno(\uline{nroPlacaInstructor} , \uline{dni} , \uline{dni})
+
+Coach(\uline{dni}, nombre, apellido, graduacion, nroCertITF, foto, \dotuline{idEscuela} )
+
+Competidor(\uline{dniCompetidor}, nombre, apellido, fechaNacimiento, genero, graduacion, nroCertITF, peso, foto, \dotuline{idEscuela})
+
+ParticipaCompetidor()
+
+ParticipaEquipo()
+
+
+
