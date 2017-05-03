@@ -6,6 +6,14 @@ A continuación, se mostrarán el Modelo de Entidad Relación y el Modelo Relaci
 
 \subsection{Modelo Relacional}
 
+Restricciones generales:
+
+\begin{itemize}
+
+	\item la graduació en todos los casos es cinturón negro y va desde 1er dan hasta 6dan.
+	\item los alumnos que anote un maestro, sus competidores, los equipos que se formen, los coachs que acompañan a los alumnos, etc etc, deben ser todos de la misma escuela.
+
+\end{itemize}
 
 \textbf{Escuela}(\uline{idEscuela}, nombre, pais, oro, plata, bronce, \dashuline{idPais})
 
@@ -19,13 +27,13 @@ Restricciones: La cantidad de bronce es menor o igual a la cantidad de matchs po
 
 \textbf{InscripcionAlumno}(\uuline{nroPlacaInstructor} , \uuline{dniAlumno} , \dashuline{dniCompetidor})
 
-\textbf{Coach}(\uuline{dniAlumno} graduacion, nroCertITF, foto )
+\textbf{Coach}(\uuline{dniAlumno} , graduacion, nroCertITF, foto )
 
 Restricciones: Debe haber un coach por cada 5 competidores.
 
 \textbf{Competidor}(\uline{dniCompetidor}, nombre, apellido, fechaNacimiento, genero, graduacion, nroCertITF, peso, foto, \dashuline{idEscuela} , \dashuline{idEquipo} , \dashuline{idEquipo} , \dashuline{idCompetencia} )
 
-Restricciones: Un competidor no puede ser titular y suplente a la vez, por lo tanto solo uno de los campos idEquipo puede tener contenido.
+Restricciones: Un competidor no puede ser titular y suplente a la vez, por lo tanto solo uno de los campos idEquipo puede tener contenido. Las competencias de las cuales participe su team, tienen que cumplir sus requisitos de edad y género.
 
 \textbf{Equipo}(\uline{idEquipo} , nombreFantasia , \dashuline{idCompetencia} )
 
@@ -37,23 +45,25 @@ Restricciones: en cada Equipo hay 5 titulares y 3 suplentes, todos de la misma e
 
 \textbf{Modalidad}(\uline{idModalidad}, sexo, edad, graduacion, REVISAR )
 
-\textbf{Forma}(\uuline{idModalidad}, REVISAR  )
+\textbf{Forma}(\uuline{idModalidad}, graduacion )
 
-\textbf{Combate}(\uuline{idModalidad}, REVISAR )
+\textbf{Combate}(\uuline{idModalidad}, graduacion , peso )
 
-\textbf{Salto}(\uuline{idModalidad}, REVISAR )
+\textbf{Salto}(\uuline{idModalidad}, graduacion )
 
-\textbf{Rotura de potencia}(\uuline{idModalidad}, REVISAR )
+\textbf{Rotura de potencia}(\uuline{idModalidad}, graduacion )
 
-\textbf{Team}(\uuline{idCompetencia}, REVISAR )
+\textbf{Team}(\uuline{idCompetencia} )
 
 \textbf{ParticipaCompetidor}(\uuline{dniCompetidor}, \uuline{idModalidad}, \dashuline{idCompetencia})
+
+Restricciones: el competidor tiene que cumplir los requisitos de edad, género , graduación y peso de la modalidad.
 
 \textbf{Arbitro}(\uline{dniArbitro}, nombre , apellido , graduación , nroPlacaArbitro , \dashuline{idPais} )
 
 \textbf{ArbitroPsteMesa}(\uuline{dniArbitro} , \dashuline(idRing) )
 
-\textbf{ArbitroTitular}(\uuline{dniArbitro} , \dashuline(idRing))
+\textbf{ArbitroCentral}(\uuline{dniArbitro} , \dashuline(idRing))
 
 \textbf{ArbitroJuez}(\uuline{dniArbitro} , \dashuline(idRing))
 
@@ -63,6 +73,8 @@ Restricciones: en cada Equipo hay 5 titulares y 3 suplentes, todos de la misma e
 
 \textbf{Ring}(\uuline{idRing})
 
+Restricciones: un Ring siempre debe tener un presidente de mesa, un arbitro central , varios jueces y al menos 3 suplentes. la graduaciones de estos arbitros deben ser mayores a las competencias que se jueguen en ese ring (un 2 dan no puede arbitrar una competencia de 4to dan)
+
 \textbf{Match}(\uuline{idMatch}, nroPelea , Ganador , Fecha , \dashuline{idRing} , \dashuline{idCompetencia})
 
 \textbf{MatchIndividual}(\uuline{idMatch} )
@@ -71,4 +83,8 @@ Restricciones: en cada Equipo hay 5 titulares y 3 suplentes, todos de la misma e
 
 \textbf{AsistenciaMatchIndividual}(\uuline{dniCompetidor}, \uuline{idMatch}, \dashuline{dniCoach(REVISAR)} )
 
+Restricciones: coach y competidor no pueden ser la misma persona.
+
 \textbf{AsistenciaMatchGrupo}(\uuline{idEquipo}, \uuline{idMatch}, \dashuline{dniCoach(REVISAR)} )
+
+Restricciones: el coach no puede pertenecer al equipo.(esto es opinión mía, saquen conclusiones, cambienlo si no están de acuerdo, REVISAR)
