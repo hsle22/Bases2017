@@ -6,85 +6,36 @@ A continuación, se mostrarán el Modelo de Entidad Relación y el Modelo Relaci
 
 \subsection{Modelo Relacional}
 
-Restricciones generales:
-
-\begin{itemize}
-
-	\item la graduació en todos los casos es cinturón negro y va desde 1er dan hasta 6dan.
-	\item los alumnos que anote un maestro, sus competidores, los equipos que se formen, los coachs que acompañan a los alumnos, etc etc, deben ser todos de la misma escuela.
-
-\end{itemize}
-
-\textbf{Escuela}(\uline{idEscuela}, nombre, pais, oro, plata, bronce, \dashuline{idPais})
-
-Restricciones: La cantidad de bronce es menor o igual a la cantidad de matchs por el tercer puesto q se han disputados, y la cantidad de oro y plata es menor o igual a la cantidad de finales que se han jugado.
-
-\textbf{Maestro}(\uline{nroPlacaInstructor}, nombre, apellido, graduacion, \dashuline{idEscuela}, )
+\textbf{Escuela}(\uline{idEscuela}, nombre, \dashuline{idPais}, \dashuline{nroPlacaInstructor})
 
 \textbf{Pais}(\uline{idPais}, nombre)
 
-\textbf{Alumno}(\uline{dniAlumno}, nombre , apellido, \dashuline{idEscuela} , \dashuline{dniCompetidor})
+\textbf{Maestro}(\uline{nroPlacaInstructor}, nombre, apellido, graduación)
 
-\textbf{InscripcionAlumno}(\uuline{nroPlacaInstructor} , \uuline{dniAlumno} , \dashuline{dniCompetidor})
+\textbf{Alumno}(\uline{dniAlumno}, nombre, apellido, \dashuline{idEscuela})
 
-\textbf{Coach}(\uuline{dniAlumno} , graduacion, nroCertITF, foto )
+\textbf{Coach}(\uuline{dniAlumno}, nroITF, foto, graduación)
 
-Restricciones: Debe haber un coach por cada 5 competidores.
+\textbf{Competidor}(\uline{dniCompetidor}, nroITF, fechaNacimiento, género, graduación, peso, foto, \dashuline{idEquipo}, \dashuline{idEquipo})
 
-\textbf{Competidor}(\uline{dniCompetidor}, nombre, apellido, fechaNacimiento, genero, graduacion, nroCertITF, peso, foto, \dashuline{idEscuela} , \dashuline{idEquipo} , \dashuline{idEquipo} , \dashuline{idCompetencia} )
+\textbf{senseiInscribeAlumno}(\uuline{dniCompetidor}, \uuline{dniAlumno}, \dashuline{nroPlacaInstructor})
 
-Restricciones: Un competidor no puede ser titular y suplente a la vez, por lo tanto solo uno de los campos idEquipo puede tener contenido. Las competencias de las cuales participe su team, tienen que cumplir sus requisitos de edad y género.
+\textbf{Equipo}(\uline{idEquipo}, nombre)
 
-\textbf{Equipo}(\uline{idEquipo} , nombreFantasia , \dashuline{idCompetencia} )
+\textbf{Competencia}(\uline{idCompetencia}, oro, plata, bronce, \dashuline{idModalidad})
 
-Restricciones: en cada Equipo hay 5 titulares y 3 suplentes, todos de la misma escuela.
+\textbf{compiteEnCompetenciaInd}(\uuline{dniCompetidor}, \uuline{idCompetencia}, \dashuline{dniCoach})
 
-\textbf{Competencia}(\uline{idCompetencia} )
+\textbf{compiteEnCompetenciaTeam}(\uuline{idEquipo}, \uuline{idCompetencia}, \dashuline{dniCoach})
 
-\textbf{Single}(\uuline{idCompetencia}  )
+\textbf{Modalidad}(\uline{idModalidad}, edad, género, graduación, peso, modo)
 
-\textbf{Modalidad}(\uline{idModalidad}, sexo, edad, graduacion, REVISAR )
+\textbf{Ring}(\uline{idRing})
 
-\textbf{Forma}(\uuline{idModalidad}, graduacion )
+\textbf{Arbitro}(\uline{nroPlacaArbitro}, nombre, apellido, graduación, \dashuline{idPais})
 
-\textbf{Combate}(\uuline{idModalidad}, graduacion , peso )
+\textbf{arbitrosEnCompetencias}(\uuline{nroPlacaArbitro}, \uuline{idCompetencia})
 
-\textbf{Salto}(\uuline{idModalidad}, graduacion )
+\textbf{ringsDeCompetencias}(\uuline{idRing}, \uuline{idCompetencia})
 
-\textbf{Rotura de potencia}(\uuline{idModalidad}, graduacion )
-
-\textbf{Team}(\uuline{idCompetencia} )
-
-\textbf{ParticipaCompetidor}(\uuline{dniCompetidor}, \uuline{idModalidad}, \dashuline{idCompetencia})
-
-Restricciones: el competidor tiene que cumplir los requisitos de edad, género , graduación y peso de la modalidad.
-
-\textbf{Arbitro}(\uline{dniArbitro}, nombre , apellido , graduación , nroPlacaArbitro , \dashuline{idPais} )
-
-\textbf{ArbitroPsteMesa}(\uuline{dniArbitro} , \dashuline(idRing) )
-
-\textbf{ArbitroCentral}(\uuline{dniArbitro} , \dashuline(idRing))
-
-\textbf{ArbitroJuez}(\uuline{dniArbitro} , \dashuline(idRing))
-
-\textbf{ArbitroSuplente}(\uuline{dniArbitro} , \dashuline(idRing))
-
-\textbf{ArbitrosEnCompetencias}(\uuline{dniArbitro} , \uuline{idCompetencia} )
-
-\textbf{Ring}(\uuline{idRing})
-
-Restricciones: un Ring siempre debe tener un presidente de mesa, un arbitro central , varios jueces y al menos 3 suplentes. la graduaciones de estos arbitros deben ser mayores a las competencias que se jueguen en ese ring (un 2 dan no puede arbitrar una competencia de 4to dan)
-
-\textbf{Match}(\uuline{idMatch}, nroPelea , Ganador , Fecha , \dashuline{idRing} , \dashuline{idCompetencia})
-
-\textbf{MatchIndividual}(\uuline{idMatch} )
-
-\textbf{MatchGrupo}(\uuline{idMatch} )
-
-\textbf{AsistenciaMatchIndividual}(\uuline{dniCompetidor}, \uuline{idMatch}, \dashuline{dniCoach(REVISAR)} )
-
-Restricciones: coach y competidor no pueden ser la misma persona.
-
-\textbf{AsistenciaMatchGrupo}(\uuline{idEquipo}, \uuline{idMatch}, \dashuline{dniCoach(REVISAR)} )
-
-Restricciones: el coach no puede pertenecer al equipo.(esto es opinión mía, saquen conclusiones, cambienlo si no están de acuerdo, REVISAR)
+\textbf{pustoArbitroEnRing}(\uuline{nroPlacaArbitro},\uuline{idRing})
