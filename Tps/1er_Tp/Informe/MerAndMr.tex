@@ -18,21 +18,40 @@ A continuación, se mostrarán el Modelo de Entidad Relación y el Modelo Relaci
 PK = CK = \{ idEscuela \} \\
 FK = \{ idPais, nroPlacaInstructor \} \\
 
+\begin{verbatim}
+--------------------------------------------------------------------------
+\end{verbatim}
+
 \noindent\textbf{Pais}(\uline{idPais}, nombre)
 \\
 \\
 PK = CK = \{ idPais \} \\
+
+
+\begin{verbatim}
+--------------------------------------------------------------------------
+\end{verbatim}
 
 \noindent\textbf{Maestro}(\uline{nroPlacaInstructor}, nombre, apellido, graduación)
 \\
 \\
 PK = CK = \{ nroPlacaInstructor \} \\
 
+
+\begin{verbatim}
+--------------------------------------------------------------------------
+\end{verbatim}
+
 \noindent\textbf{Alumno}(\uline{dniAlumno}, nombre, apellido, \dashuline{idEscuela})
 \\
 \\
 PK = CK = \{ dniAlumno \} \\
 FK = \{ idEscuela \} \\
+
+
+\begin{verbatim}
+--------------------------------------------------------------------------
+\end{verbatim}
 
 \noindent\textbf{Coach}(\uuline{dniAlumno}, nroITF, foto, graduación)
 \\
@@ -42,7 +61,13 @@ PK = CK = FK = \{ dniAlumno \} \\
 \textit{Restricciones:}
 \begin{itemize}
 	\item Un alumno puede \textbf{no} estar en Coach
+	\item habrá al menos un coach por cada 5 competidores
 \end{itemize}
+
+
+\begin{verbatim}
+--------------------------------------------------------------------------
+\end{verbatim}
 
 \noindent\textbf{Competidor}(\uline{dniCompetidor}, nroITF, fechaNacimiento, género, graduación, peso, foto, \dashuline{idEquipoTitular}, \dashuline{idEquipoSuplente})
 \\
@@ -55,9 +80,13 @@ FK = \{ idEquipoTitular, idEquipoSuplente \} \\
 \begin{itemize}
 	\item Un alumno puede \textbf{no} estar en Competidor.
 	\item El Competidor puede \textbf{no} estar en Equipo.
-	\item Si el Competidor estar en Equipo, entonces es Titular ó es Suplente. No puede cumplir los dos roles en Equipo.
+	\item Si el Competidor está en Equipo, entonces es Titular ó es Suplente. No puede cumplir los dos roles en Equipo.
 \end{itemize}
 
+
+\begin{verbatim}
+--------------------------------------------------------------------------
+\end{verbatim}
 
 \noindent\textbf{senseiInscribeAlumno}(\uuline{dniCompetidor}, \uuline{dniAlumno}, \dashuline{nroPlacaInstructor})
 \\
@@ -67,11 +96,24 @@ CK = \{ (dniCompetidor,dniAlumno), (dniCompetidor,nroPlacaInstructor), (dniAlumn
 FK = \{ dniCompetidor, dniAlumno, nroPlacaInstructor \} \\
 
 
+\begin{verbatim}
+--------------------------------------------------------------------------
+\end{verbatim}
+
 \noindent\textbf{Equipo}(\uline{idEquipo}, nombre)
 \\
 \\
 PK = CK = \{ idEquipo \} \\
 
+\textit{Restricciones:}
+\begin{itemize}
+	\item Los equipos están conformados por 5 titulares y 3 suplentes, y todos deben ser de la misma escuela.
+\end{itemize}
+
+
+\begin{verbatim}
+--------------------------------------------------------------------------
+\end{verbatim}
 
 \noindent\textbf{Competencia}(\uline{idCompetencia}, descripcion, oro, plata, bronce, \dashuline{idModalidad})
 \\
@@ -84,12 +126,27 @@ FK = \{ idModalidad \} \\
 	\item Competencia guarda los dni de los ganadores. En Oro el dni del primer puesto de la competencia, en plata el dni del segundo puesto, y en bronce el dni del tercer puesto. (esta son FK DUDA)
 \end{itemize}
 
+\begin{verbatim}
+--------------------------------------------------------------------------
+\end{verbatim}
+
 \noindent\textbf{compiteEnCompetenciaInd}(\uuline{dniCompetidor}, \uuline{idCompetencia}, \dashuline{dniCoach})
 \\
 \\
 PK = \{ (dniCompetidor,idCompetencia) \} \\
 CK = \{ (dniCompetidor,idCompetencia), (dniCompetidor,dniCoach), (idCompetencia,dniCoach)\} \\
 FK = \{ dniCompetidor, idCompetencia, dniCoach \} \\
+
+\textit{Restricciones:}
+\begin{itemize}
+	\item Los competidores que se registren en una competencia, deben cumplir con las exigencias de la misma, es decir, deben respetar la edad, el sexo, la graduación, o cualquier exigencia que la modalidad de la competencia exija.
+	\item Un coach que es competidor no podrá ser coach de si mismo.
+\end{itemize}
+
+
+\begin{verbatim}
+--------------------------------------------------------------------------
+\end{verbatim}
 
 \noindent\textbf{compiteEnCompetenciaTeam}(\uuline{idEquipo}, \uuline{idCompetencia}, \dashuline{dniCoach})
 \\
@@ -98,15 +155,33 @@ PK = \{ (idEquipo,idCompetencia) \} \\
 CK = \{ (idEquipo,idCompetencia), (idEquipo,idCompetencia), (idCompetencia,dniCoach)\} \\
 FK = \{ idEquipo, idCompetencia, dniCoach \} \\
 
+\textit{Restricciones:}
+\begin{itemize}
+	\item Los competidores de los equipos que se registren en una competencia, deben cumplir con las exigencias de la misma, es decir, deben respetar la edad, el sexo, la graduación, o cualquier exigencia que la modalidad de la competencia exija.
+	\item Un coach que es competidor no podrá ser coach del equipo al que pertenece.
+\end{itemize}
+
+\begin{verbatim}
+--------------------------------------------------------------------------
+\end{verbatim}
+
 \noindent\textbf{Modalidad}(\uline{idModalidad}, edad, género, graduación, peso, modo)
 \\
 \\
 PK = CK = \{ idModalidad \} \\
 
+\begin{verbatim}
+--------------------------------------------------------------------------
+\end{verbatim}
+
 \noindent\textbf{Ring}(\uline{idRing})
 \\
 \\
 PK = CK = \{ idRing \} \\
+
+\begin{verbatim}
+--------------------------------------------------------------------------
+\end{verbatim}
 
 \noindent\textbf{Arbitro}(\uline{nroPlacaArbitro}, nombre, apellido, graduación, \dashuline{idPais})
 \\
@@ -114,17 +189,48 @@ PK = CK = \{ idRing \} \\
 PK = CK = \{ nroPlacaArbitro \} \\
 FK = \{ idPais \} \\
 
+\begin{verbatim}
+--------------------------------------------------------------------------
+\end{verbatim}
+
 \noindent\textbf{arbitrosEnCompetencias}(\uuline{nroPlacaArbitro}, \uuline{idCompetencia})
 \\
 \\
 PK = CK = FK = \{ (nroPlacaArbitro,idCompetencia) \} \\
+
+\textit{Restricciones:}
+\begin{itemize}
+	\item La graduación de un arbitro debe ser siempre MAYOR a la graduación de la modalidad de la competencia.
+\end{itemize}
+
+\begin{verbatim}
+--------------------------------------------------------------------------
+\end{verbatim}
 
 \noindent\textbf{ringsDeCompetencias}(\uuline{idRing}, \uuline{idCompetencia})
 \\
 \\
 PK = CK = FK = \{ (idRing,idCompetencia) \} \\
 
+\textit{Restricciones:}
+\begin{itemize}
+	\item Los rings de cada competencia deben poseer arbitros que tengan la capacidad de dirigirlas.
+\end{itemize}
+
+\begin{verbatim}
+--------------------------------------------------------------------------
+\end{verbatim}
+
 \noindent\textbf{puestoArbitroEnRing}(\uuline{nroPlacaArbitro},\uuline{idRing}, puesto)
 \\
 \\
 PK = CK = FK = \{ (nroPlacaArbitro,idRing) \} \\
+
+\textit{Restricciones:}
+\begin{itemize}
+	\item En un Ring siempre habrá un presidente de mesa, un arbitro central, varios jueces y al menos tres suplentes.
+\end{itemize}
+
+\begin{verbatim}
+--------------------------------------------------------------------------
+\end{verbatim}
