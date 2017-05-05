@@ -1,7 +1,7 @@
 \section{Desarrollo}
 
 Cuando empezamos a diseñar el DER nos encontramos con varias dudas sobre algunas entidades y alguna de las
-relaciones entre ellas. Luego de hacer las consultas con nuestro Tutor tuvimos que realizar algunos cambios. A continuaci\'on describiremos los cambios más importantes.
+relaciones entre ellas. Luego de hacer las consultas con nuestro Tutor tuvimos que realizar algunos cambios. A continuaci\'on describiremos los cambios m\'as importantes.
 
 \subsection{Entidad Modalidad}
 
@@ -27,7 +27,7 @@ Para simplificar el modelo lo que hicimos fue eliminar estas entidades hijas y p
 
 Dado que el enunciado ped\'ia obtener los ganadores de cada competencia: 1er, 2do y 3er lugar, pensamos en guardar la informaci\'on de los encuentros y obtener de ellos el resultado de los ganadores. La entidad Match guardar\'ia el id del competidor ganador y la fecha del encuentro. Para esto asumiamos que los dos \'ultimos encuentros ser\'ian las del 3er puesto y la final. Aca nos volvimos a encontrar con el problema de diferenciar los encuentros entre competidores y los de equipos, por lo cual teníamos que crear una jerarquía para obtener MatchIndividual y MatchGrupo. Y al igual que en el caso de la entidad Competencia ,estas entidades hijas carecían de atributos y s\'olo guardaban campos claves de otras entidades.
 
-Luego de mostrarselo a nuestro benemérito Tutor, comprendimos que no había que guardar la información de los encuentros, y que s\'olo bastaba con que la competencia almacenara los Id de los competidores/equipos ganadores. Por ese decidimos eliminar la entidad Match, y guardamos en la relacion ternaria Compite el n\'umero del puesto obtenido en la competencia.
+Luego de mostrarselo a nuestro benemérito Tutor, comprendimos que no había que guardar la información de los encuentros, y que s\'olo bastaba con que la competencia almacenara los Id de los competidores/equipos ganadores. Por ese decidimos eliminar la entidad Match, y guardamos en la relaci\'on ternaria Compite el n\'umero del puesto obtenido en la competencia.
 
 \begin{center}
 \includegraphics[width=6cm,keepaspectratio]{./imagenes/des2.pdf}\newline
@@ -35,6 +35,13 @@ Luego de mostrarselo a nuestro benemérito Tutor, comprendimos que no había que
 
 \subsection{Entidad Alumno}
 
+Esta entidad sufri\'o varias modificaciones a lo largo del tp, mayormente causadas por sus relaciones con la entidad maestro, competidor y coach.
+
+En un principio, pensabamos que un competidor podía ser alumno o ser coach, y de ahí deducíamos que el coach podía ser competidor, dando lugar a la versión 1. Como toda primer idea, producía una gran cantidad de errores, hasta el punto de no respetar el enunciado, puesto que no permitía un coach que no fuera competidor. 
+
+Luego pensamos en modelar el hecho de que el maestro inscribe al alumno. De ahí nació la ternaria Maestro, competidor, alumno. Para incluir al coach, lo hicimos sub entidad de alumno, permitiendole participar como competidor, pero como no todo alumno es competidor, no oblig\'andolo a ello. Pero una revolución implementativa desechó esta idea, que llamaremos versión 2, puesto que complicaba las querys y producía una tabla innecesaria.
+
+Esto dio paso a la versión 3, donde si bien no se ve a simple vista en el der que el maestro inscribe al alumno, se puede asumir semanticamente, y se puede obtener a través de escuela, y se considera a alumno como la entidad de las cuales subdividen coach y competidor, permitiendo todas las ventajas de la versión 2 y ahorrando una tabla.
 
 \begin{center}
 \includegraphics[width=8cm,keepaspectratio]{./imagenes/des3.pdf}\newline
