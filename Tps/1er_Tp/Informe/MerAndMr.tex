@@ -48,6 +48,10 @@ PK = CK = \{ nroPlacaInstructor \} \\
 PK = CK = \{ dniAlumno \} \\
 FK = \{ idEscuela \} \\
 
+\textit{Restricciones:}
+\begin{itemize}
+	\item un Alumno puede ser coach y competidor a la vez.
+\end{itemize}
 
 \begin{verbatim}
 --------------------------------------------------------------------------
@@ -69,7 +73,7 @@ PK = CK = FK = \{ dniAlumno \} \\
 --------------------------------------------------------------------------
 \end{verbatim}
 
-\noindent\textbf{Competidor}(\uline{dniCompetidor}, nroITF, fechaNacimiento, género, graduación, peso, foto, esTitular, \dashuline{idEquipo})
+\noindent\textbf{Competidor}(\uuline{dniAlumno}, nroITF, fechaNacimiento, género, graduación, peso, foto, esTitular, \dashuline{idEquipo})
 \\
 \\
 PK = CK = \{ dniCompetidor \} \\
@@ -82,19 +86,6 @@ FK = \{ idEquipo \} \\
 	\item El Competidor puede \textbf{no} estar en Equipo.
 	\item Si el Competidor está en Equipo, entonces si es titular, el campo esTitular tendrá un True, y si es suplente tendrá un false. En caso de no tener equipo, ese campo contendrá null.
 \end{itemize}
-
-
-\begin{verbatim}
---------------------------------------------------------------------------
-\end{verbatim}
-
-\noindent\textbf{senseiInscribeAlumno}(\uuline{dniCompetidor}, \uuline{dniAlumno}, \dashuline{nroPlacaInstructor})
-\\
-\\
-PK = \{ (dniCompetidor,dniAlumno) \} \\
-CK = \{ (dniCompetidor,dniAlumno), (dniCompetidor,nroPlacaInstructor), (dniAlumno,nroPlacaInstructor)\} \\
-FK = \{ dniCompetidor, dniAlumno, nroPlacaInstructor \} \\
-
 
 \begin{verbatim}
 --------------------------------------------------------------------------
