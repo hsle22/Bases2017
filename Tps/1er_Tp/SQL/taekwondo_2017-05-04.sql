@@ -184,25 +184,24 @@ CREATE TABLE `Competidor` (
   `graduacion` varchar(10) NOT NULL,
   `peso` int(11) NOT NULL,
   `foto` varchar(100) NOT NULL,
-  `idEquipoTitular` int(11) DEFAULT NULL,
-  `idEquipoSuplente` int(11) DEFAULT NULL,
+  `idEquipo` int(11) DEFAULT NULL,
+  `esTitular` boolean,
+  `esSuplente` boolean,
   PRIMARY KEY (`dniCompetidor`),
-  KEY `fk_Competidor_EqTitular_idx` (`idEquipoTitular`),
-  KEY `fk_Competidor_EqSuplente_idx` (`idEquipoSuplente`),
-  CONSTRAINT `fk_Competidor_EqSuplente` FOREIGN KEY (`idEquipoSuplente`) REFERENCES `Equipo` (`idEquipo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Competidor_EqTitular` FOREIGN KEY (`idEquipoTitular`) REFERENCES `Equipo` (`idEquipo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_Competidor_Eq_idx` (`idEquipo`),
+  CONSTRAINT `fk_Competidor_Equipo` FOREIGN KEY (`idEquipo`) REFERENCES `Equipo` (`idEquipo`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `Competidor` WRITE;
 /*!40000 ALTER TABLE `Competidor` DISABLE KEYS */;
 
-INSERT INTO `Competidor` (`dniCompetidor`, `nroITF`, `fechaNacimiento`, `genero`, `graduacion`, `peso`, `foto`, `idEquipoTitular`, `idEquipoSuplente`)
+INSERT INTO `Competidor` (`dniCompetidor`, `nroITF`, `fechaNacimiento`, `genero`, `graduacion`, `peso`, `foto`, `idEquipo`, `esTitular`, `esSuplente`)
 VALUES
-	(1,1,'1991-10-12','M','1',75,'',NULL,NULL),
-	(2,2,'1991-10-12','M','1',75,'',NULL,NULL),
-	(3,3,'2000-10-12','M','1',55,'',NULL,NULL),
-	(4,4,'1991-10-12','F','4',75,'',NULL,NULL),
-	(5,5,'2000-10-12','F','4',55,'',NULL,NULL);
+	(1,1,'1991-10-12','M','1',75,'',NULL,0,0),
+	(2,2,'1991-10-12','M','1',75,'',NULL,0,0),
+	(3,3,'2000-10-12','M','1',55,'',NULL,0,0),
+	(4,4,'1991-10-12','F','4',75,'',NULL,0,0),
+	(5,5,'2000-10-12','F','4',55,'',NULL,0,0);
 
 /*!40000 ALTER TABLE `Competidor` ENABLE KEYS */;
 UNLOCK TABLES;
