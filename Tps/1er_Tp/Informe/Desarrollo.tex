@@ -20,13 +20,19 @@ Al principio pensamos esta entidad como una jerarqu\'ia, Competencia como entida
 
 Para simplificar el modelo lo que hicimos fue eliminar estas entidades hijas y pasamos la relacion "participa" de Competidor a Competendia y lo mismo para equipo. Y agregamos las restricciones de que una competencia esta relacionada a competidores o a equipos, no puede pasar ambas a la vez.
 
+\begin{center}
+\includegraphics[width=12cm,keepaspectratio]{./imagenes/des1.pdf}\newline
+\end{center}
+
 \subsection{Entidad Match}
 
 Dado que el enunciado ped\'ia obtener los ganadores de cada competencia: 1er, 2do y 3er lugar, pensamos en guardar la informaci\'on de los encuentros y obtener de ellos el resultado de los ganadores. La entidad Match guardar\'ia el id del competidor ganador y la fecha del encuentro. Para esto asumiamos que los dos \'ultimos encuentros ser\'ian las del 3er puesto y la final. Aca nos volvimos a encontrar con el problema de diferenciar los encuentros entre competidores y los de equipos, por lo cual teniamos que crear una jerarquia para obtener MatchIndividual y MatchGrupo. Y al igual que en el caso de la entidad Competencia ,estas entidades hijas carecian de atributos y s\'olo guardaban campos claves de otras entidades.
 
 Luego de mostrarselo al Tutor, comprendimos que no habia que guardar la informacion de los encuentros, y que s\'olo
 bastaba con que la competencia almacenara los Id de los competidores/equipos ganadores. Por ese decidimos eliminar la entidad Match y agregar los atributos necesarios a la Entidad Competencia para que guarde la informaci\'on de los ganadores.
-
+\begin{center}
+\includegraphics[width=6cm,keepaspectratio]{./imagenes/des2.pdf}\newline
+\end{center}
 
 
 
