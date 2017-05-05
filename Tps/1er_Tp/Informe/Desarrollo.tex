@@ -7,8 +7,8 @@ relaciones entre ellas. Luego de hacer las consultas con nuestro Tutor tuvimos q
 
 Entre los cambios más importantes, pueden destacarse aquellos relacionados con la exentidad \textbf{Modalidad}, que por enunciado, solo puede ser de 5 valores posibles y dependiendo del tipo de modo, esta posee distintos atributos. Lo primero que se nos ocurrio fue tenerla como entidad padre y luego como entidades hijas (disjuntas) a cada tipo de modalidad(forma, salto, etc).
 Pero eso luego nos tra\'ia complicaciones para definir las relaciones entre Competencia y Modalidad, dado que había que poner muchas restricciones para que el modelo sea consistente con la especificación. 
-Por ejemplo, si tuviesemos que registrar una competencia con una modalidad del tipo "Forma", una de las restricciones hubiese sido: una competencia debe estar relacionada con uno de los tipos de modalidad. También que solo está relacionado con el Tipo "Forma" y no pude estar relacionado con otro tipo. 
-Y también había que aclarar que una competencia podría no estar en la modalidad "Forma". \\
+Por ejemplo, si tuviesemos que registrar una competencia con una modalidad del tipo ''Forma", una de las restricciones hubiese sido: una competencia debe estar relacionada con uno de los tipos de modalidad. También que solo está relacionado con el Tipo ''Forma'' y no pude estar relacionado con otro tipo. 
+Y también había que aclarar que una competencia podría no estar en la modalidad ''Forma". \\
 
 Luego al consultarlo con el Tutor decidimos que no tenía tanta relevacia separar esa información en tantas entidades, si no que podr\'iamos almacenar toda esa información en una sola entidad. Agregando como restricciones que si la entidad era de detenerminado modo, entonces tenía que tener valores no nulos los atributos correspondientes a ese modo. \\
 

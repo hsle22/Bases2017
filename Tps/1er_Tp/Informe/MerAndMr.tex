@@ -69,11 +69,11 @@ PK = CK = FK = \{ dniAlumno \} \\
 --------------------------------------------------------------------------
 \end{verbatim}
 
-\noindent\textbf{Competidor}(\uline{dniCompetidor}, nroITF, fechaNacimiento, género, graduación, peso, foto, \dashuline{idEquipoTitular}, \dashuline{idEquipoSuplente})
+\noindent\textbf{Competidor}(\uline{dniCompetidor}, nroITF, fechaNacimiento, género, graduación, peso, foto, esTitular, esSuplente, \dashuline{idEquipo})
 \\
 \\
 PK = CK = \{ dniCompetidor \} \\
-FK = \{ idEquipoTitular, idEquipoSuplente \} \\
+FK = \{ idEquipo \} \\
 
 
 \textit{Restricciones:}
@@ -165,7 +165,7 @@ FK = \{ idEquipo, idCompetencia, dniCoach \} \\
 --------------------------------------------------------------------------
 \end{verbatim}
 
-\noindent\textbf{Modalidad}(\uline{idModalidad}, edad, género, graduación, peso, modo)
+\noindent\textbf{Modalidad}(\uline{idModalidad}, edadMínima, edadMáxima, género, graduación, pesoMínimo, pesoMáximo, modo)
 \\
 \\
 PK = CK = \{ idModalidad \} \\
