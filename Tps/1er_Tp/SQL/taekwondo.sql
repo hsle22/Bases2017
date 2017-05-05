@@ -432,7 +432,7 @@ DROP TABLE IF EXISTS `puestoArbitroEnRing`;
 CREATE TABLE `puestoArbitroEnRing` (
   `nroPlacaArbitro` int(11) NOT NULL,
   `idRing` int(11) NOT NULL,
-  `puestoArbitroEnRing` varchar(255) DEFAULT NULL,
+  `puesto` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`nroPlacaArbitro`,`idRing`),
   KEY `fk_puestoArbitroEnRing_Ring` (`idRing`),
   CONSTRAINT `fk_puestoArbitroEnRing_Arbitro` FOREIGN KEY (`nroPlacaArbitro`) REFERENCES `Arbitro` (`nroPlacaArbitro`) ON DELETE NO ACTION ON UPDATE NO ACTION,
@@ -442,7 +442,7 @@ CREATE TABLE `puestoArbitroEnRing` (
 LOCK TABLES `puestoArbitroEnRing` WRITE;
 /*!40000 ALTER TABLE `puestoArbitroEnRing` DISABLE KEYS */;
 
-INSERT INTO `puestoArbitroEnRing` (`nroPlacaArbitro`, `idRing`, `puestoArbitroEnRing`)
+INSERT INTO `puestoArbitroEnRing` (`nroPlacaArbitro`, `idRing`, `puesto`)
 VALUES
 	(1,1,'JEFE'),
 	(1,2,'JEFE'),
