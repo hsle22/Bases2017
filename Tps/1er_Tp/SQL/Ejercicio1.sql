@@ -1,5 +1,8 @@
 -- categorias correspondientes a competencias individuales
 select Modalidad.idModalidad, Modalidad.Modo, 
+	Modalidad.edadMinima, Modalidad.edadMaxima,
+	Modalidad.pesoMinimo, Modalidad.pesoMaximo,
+	Modalidad.sexo,
 	Alumno.nombre, Alumno.apellido, 
 	null equipo 
 	from compiteEnCompetenciaInd ind 
@@ -9,6 +12,9 @@ select Modalidad.idModalidad, Modalidad.Modo,
 union all
 -- categorias correspondientes a competencias por equipo
 select Modalidad.idModalidad, Modalidad.Modo, 
+	Modalidad.edadMinima, Modalidad.edadMaxima,
+	Modalidad.pesoMinimo, Modalidad.pesoMaximo,
+	Modalidad.sexo,
 	Alumno.nombre, Alumno.apellido, 
 	Equipo.nombre 
 	from compiteEnCompetenciaTeam team 
