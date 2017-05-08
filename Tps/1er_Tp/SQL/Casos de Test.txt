@@ -1,0 +1,77 @@
+Casos de Test:
+
+Escuela 1 (Argentina)
+Escuela 2 (Brasil)
+Escuela 3 (Brasil)
+Escuela 4 (Argentina)
+Escuela 5 (Peru)
+Escuela 6 (Peru)
+
+Escuela1: (gane oro equipo) - Argentina
+Alumnos: 6 Total
+Competidores: 5 (id 1,2,3,10,11,12)
+Equipo: 1 //titular (id 1,2,10,11,12)
+Coach: 1 (id 3)
+competidor-coach: 1
+
+Escuela2: 
+Alumnos: 3 Total (id 4,5,13)
+Competidores: 2 (id 4,5)
+Coach: 1(id 13)
+competidor-coach: 0
+
+Escuela3: (gane plata equipo) - Brasil
+Alumnos: 6 Total
+Competidores: 1 (id 7,14,15,16,17)
+Equipo: 3 titular (id 7,14,15,16,17)
+Coach: 1 (id 8 )
+competidor-coach: 0
+
+
+Escuela4: 
+Alumnos: 2 Total
+Competidores: 2 (id 6,18)
+Coach: 2 (id 6,18)
+competidor-coach: 2
+
+Escuela5: (gane bronce equipo) - Peru
+Alumnos: 6 Total
+Competidores: 5 (id 9,26,27,28,29)
+Equipo: 2 // titular (id 9,26,27,28,29)
+Coach: 1 (id 25)
+competidor-coach: 0
+
+Escuela6: (gane nada equipo)
+Alumnos: 6 Total
+Competidores: 5 (id 19,20,21,22,23)
+Equipo: 4 // titular (id 19,20,21,22,23)
+Coach: 2 (id 20, 24)
+competidor-coach: 1 (id 20)
+
+Competencia Equipo salto adulto--
+Compiten los 4 grupos
+Id competencia: 2
+equipo 1 - oro arg
+equipo 3 - plata brasil
+equipo 2 - bronce peru
+equipo 4 - nada peru
+-----
+Id competencia: 1
+
+equipo 1 - plata arg
+equipo 2 - bronce peru
+
+------
+
+Competencia individual salto adulto
+Id competencia: 1
+alumno 4 - oro brasil
+alumno 19 - plata peru
+alumno 12 - bronce arg
+alumno 9 - nada peru
+
+Id competencia: 2
+alumno 1 - oro arg
+alumno 2 - plata arg
+alumno 10 - bronce arg
+alumno 22 - nada peru

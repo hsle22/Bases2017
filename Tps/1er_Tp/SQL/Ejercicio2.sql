@@ -1,11 +1,15 @@
 set sql_mode = '';
 -- QUERY MEDALLAS POR PAIS
-	
+-- Falta tomar maximo de cada columna	
 -- puestos individuales por pais
-(select count(*) as cantidadMedallas, nombre  from 
-
+(select 
+sum(oro) as oro, sum(plata) as plata,sum(bronce) as bronce , nombre  
+from
 ((select  
-	case puestoCompetidor when 1 then 'ORO' when 2 then 'PLATA' when 3 then 'BRONCE' else NULL end as medalla,
+	case puestoCompetidor when 1 then 1 else 0 end as oro,
+	case puestoCompetidor when 2 then 1 else 0 end as plata,
+	case puestoCompetidor when 3 then 1 else 0 end as bronce,
+
 	Pais.nombre 
 	from Alumno 
 		inner join compiteEnCompetenciaInd on Alumno.idAlumno = compiteEnCompetenciaInd.dniCompetidor 
@@ -18,13 +22,21 @@ union all
 (select 
 	-- Competidor.idEquipo, 
 	-- compiteEnCompetenciaTeam.idCompetencia,
-	case compiteEnCompetenciaTeam.puestoTeam when 1 then 'ORO' when 2 then 'PLATA' when 3 then 'BRONCE' else NULL end as medalla,
+	case compiteEnCompetenciaTeam.puestoTeam when 1 then 1 else 0 end as oro,
+	case compiteEnCompetenciaTeam.puestoTeam when 2 then 1 else 0 end as plata,
+	case compiteEnCompetenciaTeam.puestoTeam when 3 then 1 else 0 end as bronce,
+
 	Pais.nombre 
-	from Alumno inner join Competidor on Alumno.idAlumno = Competidor.dniCompetidor 
-		inner join compiteEnCompetenciaTeam on Competidor.idEquipo = compiteEnCompetenciaTeam.idEquipo 
+	from compiteEnCompetenciaTeam
+		inner join Equipo on compiteEnCompetenciaTeam.idEquipo = Equipo.idEquipo 
+		inner join Competidor on Equipo.idEquipo = Competidor.idEquipo 
+			inner join Alumno on Competidor.dniCompetidor = Alumno.idAlumno 
 			inner join Escuela on Alumno.idEscuela = Escuela.idEscuela 
 				inner join Pais on Escuela.idPais = Pais.idPais 
-				group by Competidor.idEquipo, compiteEnCompetenciaTeam.idCompetencia)) as R group by R.nombre order by cantidadMedallas desc limit 1);
+				group by Equipo.idEquipo, compiteEnCompetenciaTeam.idCompetencia)) as R 
+ group by R.nombre 
+ order by oro desc, plata desc, bronce desc
+);
 
 
 
