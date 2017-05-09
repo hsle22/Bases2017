@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `TAEKWONDO` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `TAEKWONDO`;
--- MySQL dump 10.13  Distrib 5.5.54, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.55, for debian-linux-gnu (x86_64)
 --
 -- Host: 127.0.0.1    Database: TAEKWONDO
 -- ------------------------------------------------------
--- Server version	5.5.54-0ubuntu0.14.04.1
+-- Server version	5.5.55-0ubuntu0.14.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -266,7 +266,7 @@ CREATE TABLE `Modalidad` (
 
 LOCK TABLES `Modalidad` WRITE;
 /*!40000 ALTER TABLE `Modalidad` DISABLE KEYS */;
-INSERT INTO `Modalidad` VALUES (1,'Salto',14,17,NULL,NULL,1,'M'),(2,'Salto',18,35,NULL,NULL,1,'M'),(3,'Salto',14,17,NULL,NULL,1,'F'),(4,'Salto',18,35,NULL,NULL,1,'F'),(5,'Combate',14,17,50,60,1,'M'),(6,'Combate',18,35,70,80,1,'M'),(7,'Combate',14,17,50,60,1,'F'),(8,'Combate',18,35,70,80,1,'F'),(9,'Rotura',NULL,NULL,NULL,NULL,1,'M'),(10,'Rotura',NULL,NULL,NULL,NULL,1,'M'),(11,'Rotura',NULL,NULL,NULL,NULL,1,'F'),(12,'Rotura',NULL,NULL,NULL,NULL,1,'F'),(13,'CombateEquipos',NULL,NULL,NULL,NULL,NULL,'M'),(14,'CombateEquipos',NULL,NULL,NULL,NULL,NULL,'F'),(15,'Formas',14,17,NULL,NULL,1,'M'),(16,'Formas',18,35,NULL,NULL,1,'M'),(17,'Formas',14,17,NULL,NULL,1,'F'),(18,'Formas',18,35,NULL,NULL,1,'F'),(19,'Formas',14,17,NULL,NULL,4,'M'),(20,'Formas',18,35,NULL,NULL,4,'M'),(21,'Formas',14,17,NULL,NULL,4,'F'),(22,'Formas',18,35,NULL,NULL,4,'F');
+INSERT INTO `Modalidad` VALUES (1,'Combate',14,17,0,0,1,'M'),(2,'Salto',18,35,NULL,NULL,1,'M'),(3,'Salto',14,17,NULL,NULL,1,'F'),(4,'Salto',18,35,NULL,NULL,1,'F'),(5,'Combate',14,17,50,60,1,'M'),(6,'Combate',18,35,70,80,1,'M'),(7,'Combate',14,17,50,60,1,'F'),(8,'Combate',18,35,70,80,1,'F'),(9,'Rotura',NULL,NULL,NULL,NULL,1,'M'),(10,'Rotura',NULL,NULL,NULL,NULL,1,'M'),(11,'Rotura',NULL,NULL,NULL,NULL,1,'F'),(12,'Rotura',NULL,NULL,NULL,NULL,1,'F'),(13,'CombateEquipos',NULL,NULL,NULL,NULL,NULL,'M'),(14,'CombateEquipos',NULL,NULL,NULL,NULL,NULL,'F'),(15,'Formas',14,17,NULL,NULL,1,'M'),(16,'Formas',18,35,NULL,NULL,1,'M'),(17,'Formas',14,17,NULL,NULL,1,'F'),(18,'Formas',18,35,NULL,NULL,1,'F'),(19,'Formas',14,17,NULL,NULL,4,'M'),(20,'Formas',18,35,NULL,NULL,4,'M'),(21,'Formas',14,17,NULL,NULL,4,'F'),(22,'Formas',18,35,NULL,NULL,4,'F');
 /*!40000 ALTER TABLE `Modalidad` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -371,7 +371,7 @@ CREATE TABLE `compiteEnCompetenciaInd` (
 
 LOCK TABLES `compiteEnCompetenciaInd` WRITE;
 /*!40000 ALTER TABLE `compiteEnCompetenciaInd` DISABLE KEYS */;
-INSERT INTO `compiteEnCompetenciaInd` VALUES (1,2,3,1),(2,2,3,2),(4,1,13,1),(9,1,25,0),(10,2,3,3),(12,1,3,3),(19,1,20,2),(22,2,24,0);
+INSERT INTO `compiteEnCompetenciaInd` VALUES (1,2,3,1),(2,2,3,2),(4,1,13,1),(9,1,25,4),(10,2,3,3),(12,1,3,3),(19,1,20,2),(22,2,24,0);
 /*!40000 ALTER TABLE `compiteEnCompetenciaInd` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -390,9 +390,9 @@ CREATE TABLE `compiteEnCompetenciaTeam` (
   PRIMARY KEY (`idEquipo`,`idCompetencia`),
   KEY `fk_compiteEnCompetenciaTeam_Competencia_idx` (`idCompetencia`),
   KEY `fk_compiteEnCompetenciaTeam_coach_idx` (`dniCoach`),
+  CONSTRAINT `fk_compiteEnCompetenciaTeam_coach` FOREIGN KEY (`dniCoach`) REFERENCES `Coach` (`dniAlumno`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_compiteEnCompetenciaTeam_Competencia` FOREIGN KEY (`idCompetencia`) REFERENCES `Competencia` (`idCompetencia`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_compiteEnCompetenciaTeam_Equipo` FOREIGN KEY (`idEquipo`) REFERENCES `Equipo` (`idEquipo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_compiteEnCompetenciaTeam_coach` FOREIGN KEY (`dniCoach`) REFERENCES `Coach` (`dniAlumno`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_compiteEnCompetenciaTeam_Equipo` FOREIGN KEY (`idEquipo`) REFERENCES `Equipo` (`idEquipo`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -460,36 +460,6 @@ LOCK TABLES `ringsDeCompetencias` WRITE;
 INSERT INTO `ringsDeCompetencias` VALUES (2,2);
 /*!40000 ALTER TABLE `ringsDeCompetencias` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `senseiInscribeAlumno`
---
-
-DROP TABLE IF EXISTS `senseiInscribeAlumno`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `senseiInscribeAlumno` (
-  `dniCompetidor` int(11) NOT NULL,
-  `dniAlumno` int(11) NOT NULL DEFAULT '0',
-  `nroPlacaInstructor` int(11) NOT NULL,
-  PRIMARY KEY (`dniCompetidor`,`dniAlumno`),
-  KEY `fk_senseiInscribeAlumno_Competidor_idx` (`dniCompetidor`),
-  KEY `fk_senseiInscribeAlumno_Alumno_idx` (`dniAlumno`),
-  KEY `fk_senseiInscribeAlumno_Maestro_idx` (`nroPlacaInstructor`),
-  CONSTRAINT `fk_senseiInscribeAlumno_Alumno` FOREIGN KEY (`dniAlumno`) REFERENCES `Alumno` (`idAlumno`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_senseiInscribeAlumno_Competidor` FOREIGN KEY (`dniCompetidor`) REFERENCES `Competidor` (`dniCompetidor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_senseiInscribeAlumno_Maestro` FOREIGN KEY (`nroPlacaInstructor`) REFERENCES `Maestro` (`nroPaclaInstructor`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `senseiInscribeAlumno`
---
-
-LOCK TABLES `senseiInscribeAlumno` WRITE;
-/*!40000 ALTER TABLE `senseiInscribeAlumno` DISABLE KEYS */;
-/*!40000 ALTER TABLE `senseiInscribeAlumno` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -500,4 +470,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-08 20:56:00
+-- Dump completed on 2017-05-09  0:05:48
