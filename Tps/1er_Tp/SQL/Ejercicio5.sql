@@ -9,7 +9,7 @@ set sql_mode = '';
 	case puestoCompetidor when 1 then 'ORO' when 2 then 'PLATA' when 3 then 'BRONCE' else NULL end as medalla,
 	Escuela.nombre 
 	from Alumno 
-		inner join compiteEnCompetenciaInd on Alumno.idAlumno = compiteEnCompetenciaInd.dniCompetidor 
+		inner join compiteEnCompetenciaInd on Alumno.dniAlumno = compiteEnCompetenciaInd.dniCompetidor 
 			inner join Escuela on Alumno.idEscuela = Escuela.idEscuela 
 				inner join Pais on Escuela.idPais = Pais.idPais)
 
@@ -21,7 +21,7 @@ union all
 	-- compiteEnCompetenciaTeam.idCompetencia,
 	case compiteEnCompetenciaTeam.puestoTeam when 1 then 'ORO' when 2 then 'PLATA' when 3 then 'BRONCE' else NULL end as medalla,
 	Escuela.nombre 
-	from Alumno inner join Competidor on Alumno.idAlumno = Competidor.dniCompetidor 
+	from Alumno inner join Competidor on Alumno.dniAlumno = Competidor.dniCompetidor 
 		inner join compiteEnCompetenciaTeam on Competidor.idEquipo = compiteEnCompetenciaTeam.idEquipo 
 			inner join Escuela on Alumno.idEscuela = Escuela.idEscuela 
 				inner join Pais on Escuela.idPais = Pais.idPais 

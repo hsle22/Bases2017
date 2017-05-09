@@ -9,7 +9,7 @@ select sum(R.medallaPuntaje) as puntajeTotal, R.nombre from
 	case puestoCompetidor when 1 then 3 when 2 then 2 when 3 then 1 else NULL end as medallaPuntaje,
 	Escuela.nombre
 	from Alumno 
-		inner join compiteEnCompetenciaInd on Alumno.idAlumno = compiteEnCompetenciaInd.dniCompetidor 
+		inner join compiteEnCompetenciaInd on Alumno.dniAlumno = compiteEnCompetenciaInd.dniCompetidor 
 			inner join Escuela on Alumno.idEscuela = Escuela.idEscuela 
 				inner join Pais on Escuela.idPais = Pais.idPais)
 
@@ -21,7 +21,7 @@ union all
 	-- compiteEnCompetenciaTeam.idCompetencia,
 	case compiteEnCompetenciaTeam.puestoTeam when 1 then 3 when 2 then 2 when 3 then 1 else NULL end as medallaPuntaje,
 	Escuela.nombre 
-	from Alumno inner join Competidor on Alumno.idAlumno = Competidor.dniCompetidor 
+	from Alumno inner join Competidor on Alumno.dniAlumno = Competidor.dniCompetidor 
 		inner join compiteEnCompetenciaTeam on Competidor.idEquipo = compiteEnCompetenciaTeam.idEquipo 
 			inner join Escuela on Alumno.idEscuela = Escuela.idEscuela 
 				inner join Pais on Escuela.idPais = Pais.idPais 
@@ -38,7 +38,7 @@ select sum(R.medallaPuntaje) as puntajeTotal, R.nombre from
 	case puestoCompetidor when 1 then 3 when 2 then 2 when 3 then 1 else NULL end as medallaPuntaje,
 	Pais.nombre
 	from Alumno 
-		inner join compiteEnCompetenciaInd on Alumno.idAlumno = compiteEnCompetenciaInd.dniCompetidor 
+		inner join compiteEnCompetenciaInd on Alumno.dniAlumno = compiteEnCompetenciaInd.dniCompetidor 
 			inner join Escuela on Alumno.idEscuela = Escuela.idEscuela 
 				inner join Pais on Escuela.idPais = Pais.idPais)
 
@@ -50,7 +50,7 @@ union all
 	-- compiteEnCompetenciaTeam.idCompetencia,
 	case compiteEnCompetenciaTeam.puestoTeam when 1 then 3 when 2 then 2 when 3 then 1 else NULL end as medallaPuntaje,
 	Pais.nombre 
-	from Alumno inner join Competidor on Alumno.idAlumno = Competidor.dniCompetidor 
+	from Alumno inner join Competidor on Alumno.dniAlumno = Competidor.dniCompetidor 
 		inner join compiteEnCompetenciaTeam on Competidor.idEquipo = compiteEnCompetenciaTeam.idEquipo 
 			inner join Escuela on Alumno.idEscuela = Escuela.idEscuela 
 				inner join Pais on Escuela.idPais = Pais.idPais 

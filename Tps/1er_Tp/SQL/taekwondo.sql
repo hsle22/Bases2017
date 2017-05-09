@@ -25,11 +25,11 @@ DROP TABLE IF EXISTS `Alumno`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Alumno` (
-  `idAlumno` int(11) NOT NULL,
+  `dniAlumno` int(11) NOT NULL,
   `nombre` varchar(100) DEFAULT NULL,
   `apellido` varchar(100) DEFAULT NULL,
   `idEscuela` int(11) NOT NULL,
-  PRIMARY KEY (`idAlumno`),
+  PRIMARY KEY (`dniAlumno`),
   KEY `fk_Alumno_Escuela_idx` (`idEscuela`),
   CONSTRAINT `fk_Alumno_Escuela` FOREIGN KEY (`idEscuela`) REFERENCES `Escuela` (`idEscuela`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -87,7 +87,7 @@ CREATE TABLE `Coach` (
   `foto` varchar(100) DEFAULT NULL,
   `graduacion` varchar(45) NOT NULL,
   PRIMARY KEY (`dniAlumno`),
-  CONSTRAINT `fk_Coach_Alumno` FOREIGN KEY (`dniAlumno`) REFERENCES `Alumno` (`idAlumno`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_Coach_Alumno` FOREIGN KEY (`dniAlumno`) REFERENCES `Alumno` (`dniAlumno`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -470,4 +470,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-09  0:05:48
+-- Dump completed on 2017-05-09  1:00:22

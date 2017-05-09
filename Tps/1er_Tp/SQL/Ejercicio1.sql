@@ -8,7 +8,7 @@ select Modalidad.idModalidad, Modalidad.Modo,
 	from compiteEnCompetenciaInd ind 
 	inner join Competencia on Competencia.idCompetencia = ind.idCompetencia
 	inner join Modalidad on Competencia.idModalidad = Modalidad.idModalidad
-	inner join Alumno on ind.dniCompetidor = Alumno.idAlumno 
+	inner join Alumno on ind.dniCompetidor = Alumno.dniAlumno 
 union all
 -- categorias correspondientes a competencias por equipo
 select Modalidad.idModalidad, Modalidad.Modo, 
@@ -22,5 +22,5 @@ select Modalidad.idModalidad, Modalidad.Modo,
 	inner join Competencia on Competencia.idCompetencia = team.idCompetencia 
 	inner join Modalidad on Competencia.idModalidad = Modalidad.idModalidad 
 	inner join Competidor on Competidor.idEquipo = Equipo.idEquipo 
-	inner join Alumno on Alumno.idAlumno = Competidor.dniCompetidor 
+	inner join Alumno on Alumno.dniAlumno = Competidor.dniCompetidor 
 order by 2; -- ordeno por categoria 
