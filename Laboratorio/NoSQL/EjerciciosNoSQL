@@ -1,0 +1,12 @@
+//sudo rethinkdb import -f Descargas/laboNoSQL.json --table labo1C.labo2017
+
+//Ejercicio 1
+r.db('labo1C').table('labo2017');
+//Ejercicio 2
+r.db('labo1C').table('labo2017').filter({gender:'Male'});
+
+//Ejercicio 3
+r.db('labo1C').table('labo2017').count();
+
+r.db('labo1C').table('labo2017').filter({gender:'Female'}).count();
+r.db('labo1C').table('labo2017').filter({gender:'Male'}).count();
