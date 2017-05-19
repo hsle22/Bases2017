@@ -35,8 +35,8 @@ r.db('labo1C').table('labo2017').filter({'gender':'Male'}).pluck("phone")
 r.db('labo1C').table('labo2017').filter({'gender':'Male'}).pluck("first_name","last_name","celular")
 
 //Ejercicio 10 Diego
-r.db('labo1C').table('labo2017').filter(r.row["age"] > 40).update({phone: { satelital: "15-8888-55555" }});
-r.db('labo1C').table('labo2017').filter(r.row.hasFields({phone: {satelital}})).avg('salary');
+r.db('labo1C').table('labo2017').filter(r.row["age"] > 40).update({phone: { 'satelital': "15-8888-55555" }});
+r.db('labo1C').table('labo2017').filter(r.row.hasFields({'phone': 'satelital'})).avg('salary');
 
 //Ejercicio 11 Diego
 r.db('labo1C').table('labo2017').filter(r.and_(r.row["gender"] == 'Female', r.row["age"] > 18)).avg('salary')
