@@ -24,6 +24,10 @@ r.db('labo1C').table('labo2017').filter(
 //Ejercicio 6 Helen
 r.db('labo1C').table('labo2017').group('gender').avg('salary')
 
+//Ejercicio 7 Diego
+r.db('labo1C').table('labo2017').update({phone: { work: "S/N", mobile: "S/N" }});
+r.db('labo1C').table('labo2017').filter(r.row["age"] > 20).update({phone: { mobile: "15-8888-55555" }});
+
 //Ejercicio 8 Diego
 r.db('labo1C').table('labo2017').filter({'gender':'Male'}).pluck("phone")
 
