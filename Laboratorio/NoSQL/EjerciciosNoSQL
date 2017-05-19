@@ -16,4 +16,8 @@ r.db('labo1C').table('labo2017').filter(
     r.row('first_name').match("^M").and(r.row('gender').eq('Male'))
 );
   
+//Ejercicio 5
+r.db('labo1C').table('labo2017').filter(
+    r.row('age').gt(50).and(r.row('city').eq('Buenos Aires'))
+)
 
