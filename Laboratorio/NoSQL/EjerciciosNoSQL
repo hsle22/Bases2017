@@ -10,3 +10,10 @@ r.db('labo1C').table('labo2017').count();
 
 r.db('labo1C').table('labo2017').filter({gender:'Female'}).count();
 r.db('labo1C').table('labo2017').filter({gender:'Male'}).count();
+
+//Ejercicio 4
+r.db('labo1C').table('labo2017').filter(
+    r.row('first_name').match("^M").and(r.row('gender').eq('Male'))
+);
+  
+
