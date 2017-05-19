@@ -13,33 +13,33 @@ r.db('labo1C').table('labo2017').filter({gender:'Male'}).count();
 
 //Ejercicio 4
 r.db('labo1C').table('labo2017').filter(
-    r.row('first_name').match("^M").and(r.row('gender').eq('Male'))
+    r.row('first_name').match("^M").and(r.row('gender').eq('Male'));
 );
   
 //Ejercicio 5
 r.db('labo1C').table('labo2017').filter(
-    r.row('age').gt(50).and(r.row('city').eq('Buenos Aires'))
-)
+    r.row('age').gt(50) && r.row('city').eq('Buenos Aires');
+);
 
 //Ejercicio 6 Helen
-r.db('labo1C').table('labo2017').group('gender').avg('salary')
+r.db('labo1C').table('labo2017').group('gender').avg('salary');
 
 //Ejercicio 7 Diego
 r.db('labo1C').table('labo2017').update({phone: { work: "S/N", mobile: "S/N" }});
-r.db('labo1C').table('labo2017').filter(r.row["age"] > 20).update({phone: { mobile: "15-8888-55555" }});
+r.db('labo1C').table('labo2017').filter(r.row('age').gt(20)).update({phone: { mobile: "15-8888-55555" }});
 
 //Ejercicio 8 Diego
-r.db('labo1C').table('labo2017').filter({'gender':'Male'}).pluck("phone")
+r.db('labo1C').table('labo2017').filter({'gender':'Male'}).pluck("phone");
 
 //Ejercicio 9 Diego
-r.db('labo1C').table('labo2017').filter({'gender':'Male'}).pluck("first_name","last_name","celular")
+r.db('labo1C').table('labo2017').filter({'gender':'Male'}).pluck("first_name","last_name","phone");
 
 //Ejercicio 10 Diego
-r.db('labo1C').table('labo2017').filter(r.row["age"] > 40).update({phone: { 'satelital': "15-8888-55555" }});
+r.db('labo1C').table('labo2017').filter(r.row('age').gt(40)).update({phone: { 'satelital': "15-8888-55555" }});
 r.db('labo1C').table('labo2017').filter(r.row.hasFields({'phone': 'satelital'})).avg('salary');
 
 //Ejercicio 11 Diego
-r.db('labo1C').table('labo2017').filter(r.and_(r.row["gender"] == 'Female', r.row["age"] > 18)).avg('salary')
+r.db('labo1C').table('labo2017').filter(r.row('gender').eq('Female') && r.row('age').gt(18)).avg('salary');
 
 //Ejercicio 12
 
