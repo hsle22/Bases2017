@@ -24,6 +24,8 @@ r.db('labo1C').table('labo2017').filter(
 //Ejercicio 6 Helen
 r.db('labo1C').table('labo2017').group('gender').avg('salary')
 
+//Ejercicio 11 Diego
+r.db('labo2017').table('labo2017').filter(r.and_(r.row["gender"] == 'Female', r.row["age"] > 18)).avg('salary')
 
 //Ejercicio 12
 
