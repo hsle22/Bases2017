@@ -21,3 +21,11 @@ r.db('labo1C').table('labo2017').filter(
     r.row('age').gt(50).and(r.row('city').eq('Buenos Aires'))
 )
 
+//Ejercicio 6 Helen
+r.db('labo1C').table('labo2017').group('gender').avg('salary')
+
+
+//Ejercicio 12
+
+r.db('labo1C').table('labo2017').filter({gender: "Female"}).update({age: r.row("age").add(2)});
+
