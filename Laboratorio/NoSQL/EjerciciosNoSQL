@@ -24,21 +24,21 @@ r.db('labo1C').table('labo2017').filter(
 //Ejercicio 6 Helen
 r.db('labo1C').table('labo2017').group('gender').avg('salary');
 
-//Ejercicio 7 Diego
+//Ejercicio 7
 r.db('labo1C').table('labo2017').update({phone: { work: "S/N", mobile: "S/N" }});
 r.db('labo1C').table('labo2017').filter(r.row('age').gt(20)).update({phone: { mobile: "15-8888-55555" }});
 
-//Ejercicio 8 Diego
+//Ejercicio 8
 r.db('labo1C').table('labo2017').filter({'gender':'Male'}).pluck("phone");
 
-//Ejercicio 9 Diego
+//Ejercicio 9
 r.db('labo1C').table('labo2017').filter({'gender':'Male'}).pluck("first_name","last_name","phone");
 
-//Ejercicio 10 Diego
+//Ejercicio 10
 r.db('labo1C').table('labo2017').filter(r.row('age').gt(40)).update({phone: { 'satelital': "15-8888-55555" }});
 r.db('labo1C').table('labo2017').filter(r.row.hasFields({'phone': 'satelital'})).avg('salary');
 
-//Ejercicio 11 Diego
+//Ejercicio 11
 r.db('labo1C').table('labo2017').filter(r.row('gender').eq('Female') && r.row('age').gt(18)).avg('salary');
 
 //Ejercicio 12
