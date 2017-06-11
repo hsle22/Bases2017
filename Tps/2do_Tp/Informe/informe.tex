@@ -1,0 +1,107 @@
+\documentclass[a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{charter}   % tipografía
+\usepackage{graphicx}
+\usepackage{makeidx}
+
+\usepackage{float}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{amsfonts}
+\usepackage{sectsty}
+\usepackage{wrapfig}
+\usepackage{listings} % necesario para el resaltado de sintaxis
+\usepackage{caption}
+\usepackage{placeins}
+\usepackage{longtable}
+\usepackage{ulem}
+
+\usepackage{hyperref} % agrega hipervínculos en cada entrada del índice
+\hypersetup{          % (en el pdf)
+    colorlinks=true,
+    linktoc=all,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\input{codesnippet}
+\input{page.layout}
+\usepackage{underscore}
+\usepackage{caratula}
+\usepackage{url}
+\usepackage{color}
+\usepackage{clrscode3e} % necesario para el pseudocodigo (estilo Cormen)
+
+
+
+
+\begin{document}
+%
+%\lstset{
+%  language=C++,                    % (cambiar al lenguaje correspondiente)
+%  backgroundcolor=\color{white},   % choose the background color
+%  basicstyle=\footnotesize,        % size of fonts used for the code
+%  breaklines=true,                 % automatic line breaking only at whitespace
+%  captionpos=b,                    % sets the caption-position to bottom
+%  commentstyle=\color{red},    % comment style
+%  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+%  keywordstyle=\color{blue},       % keyword style
+%  stringstyle=\color{blue},     % string literal style
+%}
+
+\thispagestyle{empty}
+\materia{Bases de Datos}
+\submateria{Primer Cuatrimestre 2017}
+\titulo{Sistema de Inscripción Mundial de Irlanda 2017 (TP2)}
+\subtitulo{Taekwon Do World Championship HISTORICO 2017}
+\integrante{Lizana, Helen}{118/08}{hsle.22@gmail.com.ar} % por cada integrante (apellido, nombre) (n° libreta) (e-mail)
+\integrante{Mignanelli, Alejandro Rubén}{609/11}{minga_titere@hotmail.com} 
+\integrante{Sabarros, Ian}{661/11}{iansden@live.com}
+\integrante{Sueiro, Diego}{75/90}{dsueiro@gmail.com} 
+
+
+\maketitle
+\newpage
+
+\thispagestyle{empty}
+\vfill
+%\begin{abstract}
+%    \vspace{0.5cm}
+%	
+%
+%\end{abstract}
+
+\thispagestyle{empty}
+\vspace{1.5cm}
+\tableofcontents
+\newpage
+
+%\normalsize
+ 
+\newpage
+
+\input{introduccion}
+
+\newpage
+
+\input{Asumimos}
+
+\newpage
+
+\input{Desarrollo}
+
+\newpage
+
+\input{did}
+
+\newpage
+
+\input{entYcod}
+
+\input{conclusiones}
+
+\end{document}
+

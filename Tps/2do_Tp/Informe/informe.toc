@@ -1,0 +1,7 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{3}{section.1}
+\contentsline {section}{\numberline {2}Asumimos}{4}{section.2}
+\contentsline {section}{\numberline {3}Desarrollo}{5}{section.3}
+\contentsline {section}{\numberline {4}Modelo de Diagrama de Interrelaci\IeC {\'o}n de Documentos}{6}{section.4}
+\contentsline {section}{\numberline {5}Entorno y C\IeC {\'o}digo}{7}{section.5}
+\contentsline {section}{\numberline {6}Conclusiones}{7}{section.6}
