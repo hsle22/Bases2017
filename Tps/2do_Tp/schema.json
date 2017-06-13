@@ -25,7 +25,17 @@
 				"graduacion":{"type":"intenger"},
 			},
 			"requiered":["nro_placa_instructor"]
+		},
+		"campeonatos":{"type":"array", "items":
+				{	"type":"object",
+					"properties":{
+						"campeonato":{"type":"intenger"},
+						"medallas":{"type":"intenger"},
+						"cantCompetencia":{"type":"intenger"}
+					}
+				}
 		}
+
 	},
 	"requiered":["id_escuela", "nombre", "maestro", "pais"]
 }
@@ -45,7 +55,7 @@
 }
 
 
-"competidor":{
+"Competidor":{
 	"type":"object",
 	"properties": {
 		"dni":{"type":"intenger"},
@@ -60,6 +70,14 @@
 		"esTitular":{"type":["null", "string"]},
 		"coach":{"type":["null", "string"]},
 		"equipos":{"type":"array", "items":{"type":"intenger"}},
+		"medallero":{"type":"array", "items":
+			{	"type":"object",
+				"properties":{
+					"modalidad":{"type":"intenger"},
+					"cantMedallas":{"type":"intenger"}
+				}
+			}
+		}
 		
 	},
 	"requiered":["dni", "escuela"]
@@ -82,14 +100,15 @@
 "Modalidad":{
 	"type":"object",
 	"properties": {
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-
+		"id_modalidad":{"type":"intenger"},
+		"modo":{"type":"string"},
+		"edad_minima":{"type":"intenger"},
+		"edad_maxima":{"type":"intenger"},
+		"peso_minimo":{"type":"intenger"},
+		"peso_maximo":{"type":"intenger"},
+		"genero":{"type":"string"},
+		"graduacion":{"type":"intenger"},
+		"competencias":{"type":"array", "items":{"type":"intenger"}},
 	}
 }
 
@@ -98,14 +117,12 @@
 "Competencia":{
 	"type":"object",
 	"properties": {
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-
+		"id_competencia":{"type":"intenger"},
+		"descripcion":{"type":"string"},
+		"modalidad":{"type":"intenger"},
+		"arbitros":{"type":"array", "items":{"type":"intenger"}},
+		"campeonato":{"type":"intenger"},
+		"encuentros":{"type":"array", "items":{"type":"Encuentro"}},
 	}
 }
 
@@ -114,15 +131,21 @@
 "Campeonato":{
 	"type":"object",
 	"properties": {
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-
-	}
+		"id_campeonato":{"type":"intenger"},
+		"nombre":{"type":"string"},
+		"fecha_inicio":{"type":"string", "format": "date-time"},
+		"fecha_fin":{"type":"string", "format": "date-time"},
+		"competencias":{"type":"array", "items":[{"type":"intenger"}]},
+		"ganadores":{"type":"array", "items":
+			{	"type":"object",
+				"properties":{
+				"competidor":{"type":"intenger"},
+				"encuentro_ganados":{"type":"intenger"}
+				}
+			}
+		},
+	},
+	"requiered":["id_campeonato", "fecha_inicio", "fecha_fin"]
 }
 
 
@@ -130,15 +153,15 @@
 "Arbitro":{
 	"type":"object",
 	"properties": {
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-
-	}
+		"nro_placa":{"type":"intenger"},
+		"nombre":{"type":"string"},
+		"apellido":{"type":"string"},
+		"graduacion":{"type":"intenger"},
+		"pais":{"type":"intenger"},
+		"competencias":{"type":"array", "items":{"type":"intenger"}},
+		"cantidad_compeonatos":{"type":"intenger"}
+	},
+	"requiered":["nro_placa", "pais"]
 }
 
 
@@ -146,15 +169,14 @@
 "Encuentro":{
 	"type":"object",
 	"properties": {
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-		"":{"type":""},
-
-	}
+		"id_competencia":{"type":"intenger"},
+		"nro_encuetro":{"type":"intenger"},
+		"id_equipo":{"type":["null", "boolean"]},
+		"competidorA":{"type":"intenger"},
+		"competidorB":{"type":"intenger"},
+		"ganador":{"type":"intenger"},
+	},
+	"requiered":["id_competencia", "nro_encuetro"]
 }
 
 
