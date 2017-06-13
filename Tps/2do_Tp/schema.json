@@ -1,0 +1,161 @@
+"Pais":{
+	"type":"object",
+	"properties": {
+		"id_pais":{"type":"intenger"},
+		"nombre":{"type":"string"},
+		"escuelas":{"type":"array", "items":{"type":"intenger"}},
+		"arbitros":{"type":"array", "items":{"type":"intenger"}}
+	},
+	"requiered":["id_pais", "nombre"]
+}
+
+"Escuela":{
+	"type":"object",
+	"properties": {
+		"id_escuela":{"type":"intenger"},
+		"nombre":{"type":"string"},
+		"competidores":{"type":"array", "items":{"type":"intenger"}},
+		"pais":{"type":"intenger"},
+		"maestro":{
+			"type":"object",
+			"properties":{
+				"nro_placa_instructor":{"type":"intenger"},
+				"nombre":	{"type":"string"},
+				"apellido":	{"type":"string"},
+				"graduacion":{"type":"intenger"},
+			},
+			"requiered":["nro_placa_instructor"]
+		}
+	},
+	"requiered":["id_escuela", "nombre", "maestro", "pais"]
+}
+
+"Coach":{
+	"type":"object",
+	"properties": {
+		"dni":{"type":"intenger"},
+		"nombre":{"type":"string"},
+		"apellido":{"type":"string"},
+		"nro_ITF":{"type":"intenger"},
+		"foto":{"type":"string"},
+		"graduacion":{"type":"intenger"},
+		"escuela":{"type":"intenger"},
+	},
+	"requiered":["dni", "escuela"]
+}
+
+
+"competidor":{
+	"type":"object",
+	"properties": {
+		"dni":{"type":"intenger"},
+		"nombre":{"type":"string"},
+		"apellido":{"type":"string"},
+		"escuela":{"type":"intenger"},
+		"nro_ITF":{"type":"intenger"},
+		"foto":{"type":"string"},
+		"graduacion":{"type":"intenger"},
+		"fecha_nacimiento":{"type":"string", "format": "date-time"},
+		"peso":{"type":"number"},
+		"esTitular":{"type":["null", "string"]},
+		"coach":{"type":["null", "string"]},
+		"equipos":{"type":"array", "items":{"type":"intenger"}},
+		
+	},
+	"requiered":["dni", "escuela"]
+}
+
+
+"Equipo":{
+	"type":"object",
+	"properties": {
+		"id_equipo":{"type":"intenger"},
+		"nombre":{"type":"string"},
+		"competidores":{"type":"array", "items":{"type":"intenger"}},
+		"coach": {"type":"intenger"}
+	},
+	"requiered":["id_equipo", "coach"]
+}
+
+
+
+"Modalidad":{
+	"type":"object",
+	"properties": {
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+
+	}
+}
+
+
+
+"Competencia":{
+	"type":"object",
+	"properties": {
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+
+	}
+}
+
+
+
+"Campeonato":{
+	"type":"object",
+	"properties": {
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+
+	}
+}
+
+
+
+"Arbitro":{
+	"type":"object",
+	"properties": {
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+
+	}
+}
+
+
+
+"Encuentro":{
+	"type":"object",
+	"properties": {
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+		"":{"type":""},
+
+	}
+}
+
+
+
