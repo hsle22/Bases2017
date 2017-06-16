@@ -1,57 +1,11 @@
-"Pais":{
-	"type":"object",
-	"properties": {
-		"id_pais":{"type":"integer"},
-		"nombre":{"type":"string"},
-		"escuelas":{"type":"array", "items":{"type":"integer"}},
-		"arbitros":{"type":"array", "items":{"type":"integer"}}
-	},
-	"requiered":["id_pais", "nombre"]
-}
-
 "Escuela":{
 	"type":"object",
 	"properties": {
 		"id_escuela":{"type":"integer"},
 		"nombre":{"type":"string"},
 		"competidores":{"type":"array", "items":{"type":"integer"}},
-		"pais":{"type":"integer"},
-		"maestro":{
-			"type":"object",
-			"properties":{
-				"nro_placa_instructor":{"type":"integer"},
-				"nombre":	{"type":"string"},
-				"apellido":	{"type":"string"},
-				"graduacion":{"type":"integer"},
-			},
-			"requiered":["nro_placa_instructor"]
-		},
-		"campeonatos":{"type":"array", "items":
-				{	"type":"object",
-					"properties":{
-						"campeonato":{"type":"integer"},
-						"medallas":{"type":"integer"},
-						"cantCompetencia":{"type":"integer"}
-					}
-				}
-		}
-
 	},
-	"requiered":["id_escuela", "nombre", "maestro", "pais"]
-}
-
-"Coach":{
-	"type":"object",
-	"properties": {
-		"dni":{"type":"integer"},
-		"nombre":{"type":"string"},
-		"apellido":{"type":"string"},
-		"nro_ITF":{"type":"integer"},
-		"foto":{"type":"string"},
-		"graduacion":{"type":"integer"},
-		"escuela":{"type":"integer"},
-	},
-	"requiered":["dni", "escuela"]
+	"requiered":["id_escuela", "nombre"]
 }
 
 
@@ -67,32 +21,20 @@
 		"graduacion":{"type":"integer"},
 		"fecha_nacimiento":{"type":"string", "format": "date-time"},
 		"peso":{"type":"number"},
-		"esTitular":{"type":["null", "string"]},
-		"coach":{"type":["null", "string"]},
-		"equipos":{"type":"array", "items":{"type":"integer"}},
-		"medallero":{"type":"array", "items":
-			{	"type":"object",
-				"properties":{
-					"modalidad":{"type":"integer"},
-					"cantMedallas":{"type":"integer"}
-				}
-			}
-		}
+		"medalleroPorModalidad":{
+			"type":"array",
+			"items":{"type":"integer"}
+			
+		},
+		"medalleroPorCampeonato":{
+			"type":"array",
+			"properties":{
+				"type":"array",
+				"items":{"type":"integer"}
+		},
 		
 	},
 	"requiered":["dni", "escuela"]
-}
-
-
-"Equipo":{
-	"type":"object",
-	"properties": {
-		"id_equipo":{"type":"integer"},
-		"nombre":{"type":"string"},
-		"competidores":{"type":"array", "items":{"type":"integer"}},
-		"coach": {"type":"integer"}
-	},
-	"requiered":["id_equipo", "coach"]
 }
 
 
@@ -123,6 +65,15 @@
 		"arbitros":{"type":"array", "items":{"type":"integer"}},
 		"campeonato":{"type":"integer"},
 		"encuentros":{"type":"array", "items":{"type":"Encuentro"}},
+		"id_campeonato":{"type":"integer"},
+		"nombre_camponato":{"type":"string"},
+		"encuentrosGanadores":{
+			"type":"array",
+			"items":{
+				"id_competidor":{"type":"integer"}, 
+				"gano":{"type":"integer"},
+			}
+		},
 	}
 }
 
@@ -135,15 +86,8 @@
 		"nombre":{"type":"string"},
 		"fecha_inicio":{"type":"string", "format": "date-time"},
 		"fecha_fin":{"type":"string", "format": "date-time"},
-		"competencias":{"type":"array", "items":[{"type":"integer"}]},
-		"ganadores":{"type":"array", "items":
-			{	"type":"object",
-				"properties":{
-				"competidor":{"type":"integer"},
-				"encuentro_ganados":{"type":"integer"}
-				}
-			}
-		},
+		"competencias":{"type":"array", "items":{"type":"integer"}},
+		"escuelas":{"type":"array", "items":{"type":"integer"}},
 	},
 	"requiered":["id_campeonato", "fecha_inicio", "fecha_fin"]
 }
@@ -157,11 +101,10 @@
 		"nombre":{"type":"string"},
 		"apellido":{"type":"string"},
 		"graduacion":{"type":"integer"},
-		"pais":{"type":"integer"},
 		"competencias":{"type":"array", "items":{"type":"integer"}},
 		"cantidad_compeonatos":{"type":"integer"}
 	},
-	"requiered":["nro_placa", "pais"]
+	"requiered":["nro_placa"]
 }
 
 
@@ -170,11 +113,18 @@
 	"type":"object",
 	"properties": {
 		"id_competencia":{"type":"integer"},
+		"id_compeonato":{"type":"integer"},
 		"nro_encuetro":{"type":"integer"},
-		"id_equipo":{"type":["null", "boolean"]},
 		"competidorA":{"type":"integer"},
 		"competidorB":{"type":"integer"},
 		"ganador":{"type":"integer"},
+		"modalidad":{
+			"type":"object",
+			"properties":{
+				"id_modalidad":{"type":"integer"},
+				"modo":{"type":"string"},			
+			}
+		}
 	},
 	"requiered":["id_competencia", "nro_encuetro"]
 }
