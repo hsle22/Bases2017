@@ -1,42 +1,143 @@
-Campeonatos:
+Campeonato 1: // 
+	id_campeonato: 1
+	nombre: Campeonato 1
+	fecha_inicio: 20/10/2012
+	fecha_fin: 20/11/2012
 
-Campeonato 1: 
-	id_campeonato:
-	nombre:
-	fecha_inicio:
-	fecha_fin:
+Campeonato 2: 
+	id_campeonato: 2
+	nombre: Campeonato 2
+	fecha_inicio: 20/10/2013
+	fecha_fin: 20/11/2013
+
+Campeonato 3: 
+	id_campeonato: 3
+	nombre: Campeonato 3
+	fecha_inicio: 20/11/2014
+	fecha_fin: 20/12/2014
+
+Campeonato 4: 
+	id_campeonato: 4
+	nombre: Campeonato 4
+	fecha_inicio: 20/11/2015
+	fecha_fin: 20/12/2015
+
+Campeonato 5: 
+	id_campeonato: 5
+	nombre: Campeonato 5
+	fecha_inicio: 20/11/2016
+	fecha_fin: 20/12/2016
+
+Competencia 1: //
+	id_competencia: 1 
+	descripcion: tuvieja123
+	campeonato: {id_campeonato: 1 , nombre_campeonato: Campeonato 1 }
+	Modalidad: 1
+	arbitros: {1,2}
+	encuentros:{1,2,3,4}
+	encuentrosGanadores:{{id_competidor:1, gano:1},{id_competidor:2, gano:0},{id_competidor:3, gano:0},{id_competidor:4, gano:1},
+			    {id_competidor:3, gano:0},{id_competidor:2, gano:1},{id_competidor:1, gano:0},{id_competidor:4, gano:1},}
+
+Competencia 2:
+	id_competencia:
+	descripcion:
+
+Competencia 3:
+	id_competencia:
+	descripcion:
+
+Competencia 4:
+	id_competencia:
+	descripcion:
+
+Competencia 5:
+	id_competencia:
+	descripcion:
+
 
 Escuela 1 :
 	id_escuela:
 	nombre:
 
-Competidor 1:
-	dni:
-	nombre:
-	apellido:
-	foto:
-	nro_itf:
-	graduación:
-	fecha_nacimiento:
-	peso:
+Competidor 1: //
+	dni: 1
+	nombre: Roque
+	apellido: Gonzalez
+	foto: esta1
+	nro_itf: 1
+	graduación: 3
+	fecha_nacimiento: 17/07/1994
+	peso: 75
 
-Modalidad 1:
-	id_modalidad:
-	modo:
-	edad_minima:
-	edad_maxima:
-	peso_minima:
-	peso_maximo:
-	genero:
-	graduacion:
+Competidor 2: //
+	dni: 2
+	nombre: Luque
+	apellido: Perez
+	foto: esta2
+	nro_itf: 2
+	graduación: 3
+	fecha_nacimiento: 17/06/1994
+	peso: 74
 
-Arbitro 1:
-	nro_placa:
-	nombre:
-	apelldo:
-	graduacion:
+Competidor 3: //
+	dni: 3
+	nombre: Ian
+	apellido: Zorra
+	foto: esta3
+	nro_itf: 3
+	graduación: 3
+	fecha_nacimiento: 17/04/1994
+	peso: 75
 
+Competidor 4: //
+	dni: 4
+	nombre: Tito
+	apellido: Fuentes
+	foto: esta4
+	nro_itf: 4
+	graduación: 3
+	fecha_nacimiento: 17/02/1994
+	peso: 75
+
+Modalidad 1: //
+	id_modalidad: 1
+	modo: Formas
+	edad_minima: 15
+	edad_maxima: 21
+	peso_minima: 70
+	peso_maximo: 80
+	genero: Masculino
+	graduacion: 2
+
+Arbitro 1: //
+	nro_placa: 1
+	nombre: Alberto
+	apelldo: Azo
+	graduacion: 6
+	Competencias: 
+	Campeonatos: 1,2,3,4,5
+
+Arbitro 2: //
+	nro_placa: 2
+	nombre: Sueirdo
+	apelldo: Helen
+	graduacion: 6
+	Competencias: 
+	Campeonatos: 1
+	
 Encuentro 1:
-	id_encuentro:
-	nro_encuentro:
+	id_encuentro: 1 
+	nro_encuentro: 1
+
+Encuentro 2:
+	id_encuentro: 2 
+	nro_encuentro: 2
+
+Encuentro 3:
+	id_encuentro: 3
+	nro_encuentro: 3
+
+Encuentro 4:
+	id_encuentro: 4 
+	nro_encuentro: 4
 
