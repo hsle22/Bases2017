@@ -66,7 +66,7 @@
 		"campeonato":{"type":"integer"},
 		"encuentros":{"type":"array", "items":{"type":"Encuentro"}},
 		"id_campeonato":{"type":"integer"},
-		"nombre_camponato":{"type":"string"},
+		"nombre_campeonato":{"type":"string"},
 		"encuentrosGanadores":{
 			"type":"array",
 			"items":{
@@ -88,6 +88,7 @@
 		"fecha_fin":{"type":"string", "format": "date-time"},
 		"competencias":{"type":"array", "items":{"type":"integer"}},
 		"escuelas":{"type":"array", "items":{"type":"integer"}},
+		"arbitros":{"type":"array", "items":{"type":"integer"}},
 	},
 	"requiered":["id_campeonato", "fecha_inicio", "fecha_fin"]
 }
@@ -102,7 +103,7 @@
 		"apellido":{"type":"string"},
 		"graduacion":{"type":"integer"},
 		"competencias":{"type":"array", "items":{"type":"integer"}},
-		"cantidad_compeonatos":{"type":"integer"}
+		"compeonatos":{"type":"array", "items":{"type":"integer"}}}
 	},
 	"requiered":["nro_placa"]
 }
