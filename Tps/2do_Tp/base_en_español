@@ -1,0 +1,42 @@
+Campeonatos:
+
+Campeonato 1: 
+	id_campeonato:
+	nombre:
+	fecha_inicio:
+	fecha_fin:
+
+Escuela 1 :
+	id_escuela:
+	nombre:
+
+Competidor 1:
+	dni:
+	nombre:
+	apellido:
+	foto:
+	nro_itf:
+	graduación:
+	fecha_nacimiento:
+	peso:
+
+Modalidad 1:
+	id_modalidad:
+	modo:
+	edad_minima:
+	edad_maxima:
+	peso_minima:
+	peso_maximo:
+	genero:
+	graduacion:
+
+Arbitro 1:
+	nro_placa:
+	nombre:
+	apelldo:
+	graduacion:
+
+Encuentro 1:
+	id_encuentro:
+	nro_encuentro:
+
