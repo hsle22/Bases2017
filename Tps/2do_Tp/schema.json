@@ -31,6 +31,7 @@
 			"properties":{
 				"type":"array",
 				"items":{"type":"integer"}
+			}
 		},
 		
 	},
@@ -63,15 +64,20 @@
 		"descripcion":{"type":"string"},
 		"modalidad":{"type":"integer"},
 		"arbitros":{"type":"array", "items":{"type":"integer"}},
-		"campeonato":{"type":"integer"},
 		"encuentros":{"type":"array", "items":{"type":"Encuentro"}},
-		"id_campeonato":{"type":"integer"},
-		"nombre_campeonato":{"type":"string"},
+		"Campeonato":{
+			"type":"object",
+			"properties":{
+				"nombre_campeonato":{"type":"string"},
+				"id_campeonato":{"type":"integer"},
+			}
+			
+		},
 		"encuentrosGanadores":{
 			"type":"array",
 			"items":{
-				"id_competidor":{"type":"integer"}, 
-				"gano":{"type":"integer"},
+				"type":"array",
+				"items":["id_competidor":{"type":"integer"}, "gano":{"type":"integer"}]
 			}
 		},
 	}
