@@ -3,30 +3,45 @@ Campeonato 1: //
 	nombre: Campeonato 1
 	fecha_inicio: 20/10/2012
 	fecha_fin: 20/11/2012
+	competencias: 1
+	escuelas: 1,2
+	arbitros: 1,2
 
 Campeonato 2: 
 	id_campeonato: 2
 	nombre: Campeonato 2
 	fecha_inicio: 20/10/2013
 	fecha_fin: 20/11/2013
+	competencias: 2
+	escuelas: 1,2
+	arbitros: 1
 
 Campeonato 3: 
 	id_campeonato: 3
 	nombre: Campeonato 3
 	fecha_inicio: 20/11/2014
 	fecha_fin: 20/12/2014
+	competencias:
+	escuelas: 1,2
+	arbitros: 1
 
 Campeonato 4: 
 	id_campeonato: 4
 	nombre: Campeonato 4
 	fecha_inicio: 20/11/2015
 	fecha_fin: 20/12/2015
+	competencias:
+	escuelas: 1,2
+	arbitros: 1
 
 Campeonato 5: 
 	id_campeonato: 5
 	nombre: Campeonato 5
 	fecha_inicio: 20/11/2016
 	fecha_fin: 20/12/2016
+	competencias:
+	escuelas: 1,2
+	arbitros: 1
 
 Competencia 1: //
 	id_competencia: 1 
@@ -39,25 +54,24 @@ Competencia 1: //
 			    {id_competidor:3, gano:0},{id_competidor:2, gano:1},{id_competidor:1, gano:0},{id_competidor:4, gano:1},}
 
 Competencia 2:
-	id_competencia:
-	descripcion:
-
-Competencia 3:
-	id_competencia:
-	descripcion:
-
-Competencia 4:
-	id_competencia:
-	descripcion:
-
-Competencia 5:
-	id_competencia:
-	descripcion:
-
+	id_competencia: 2
+	descripcion: tuvieja321
+	campeonato: {id_campeonato: 2 , nombre_campeonato: Campeonato 2 }
+	Modalidad: 2
+	arbitros: {1}
+	encuentros:{5}
+	encuentrosGanadores:{{id_competidor:1, gano:1},{id_competidor:3, gano:0}}
 
 Escuela 1 :
-	id_escuela:
-	nombre:
+	id_escuela: 1
+	nombre: La cloaca de Miguel
+	competidores: 1, 2, 4
+
+Escuela 2 :
+	id_escuela: 2
+	nombre: what the fox say
+	competidores: 3
+
 
 Competidor 1: //
 	dni: 1
@@ -109,6 +123,17 @@ Modalidad 1: //
 	genero: Masculino
 	graduacion: 2
 
+Modalidad 2: //
+	id_modalidad: 2
+	modo: Combate
+	edad_minima: 15
+	edad_maxima: 21
+	peso_minima: 70
+	peso_maximo: 80
+	genero: Masculino
+	graduacion: 2
+
+
 Arbitro 1: //
 	nro_placa: 1
 	nombre: Alberto
@@ -128,16 +153,153 @@ Arbitro 2: //
 Encuentro 1:
 	id_encuentro: 1 
 	nro_encuentro: 1
+	compA:1
+	nombreA: Roque
+	apellidoA: Gonzalez
+	compB:2
+	nombreB: Luque
+	apellidoB: Perez
+	ganador:1
+	nombreGanador: Roque
+	apellidoGanador: Gonzalez
+
 
 Encuentro 2:
 	id_encuentro: 2 
 	nro_encuentro: 2
+	compA:3
+	nombreA: Ian
+	apellidoA: Zorra
+	compB:4
+	nombreB: Tito
+	apellidoB: Fuentes
+	ganador:4
+	nombreGanador: Tito
+	apellidoGanador: Fuentes
 
 Encuentro 3:
 	id_encuentro: 3
 	nro_encuentro: 3
+	compA:3
+	nombreA: Ian
+	apellidoA: Zorra
+	compB:2
+	nombreB: Luque
+	apellidoB: Perez
+	ganador:2
+	nombreGanador: Luque
+	apellidoGanador: Perez
+
 
 Encuentro 4:
 	id_encuentro: 4 
 	nro_encuentro: 4
+	compA:1
+	nombreA: Roque
+	apellidoA: Gonzalez
+	compB:4
+	nombreB: Tito
+	apellidoB: Fuentes
+	ganador:4
+	nombreGanador: Tito
+	apellidoGanador: Fuentes
 
+Encuentro 5:
+	id_encuentro: 5 
+	nro_encuentro: 1
+	compA:1
+	nombreA: Roque
+	apellidoA: Gonzalez
+	compA:3
+	nombreA: Ian
+	apellidoA: Zorra
+	ganador:1
+	nombreGanador: Roque
+	apellidoGanador: Gonzalez
+
+
+Querys:
+
+1- La cantidad de enfrentamientos ganados por competidor para un campeonato dado
+Campeonato 1 :
+
+	dni: 1
+	nombre: Roque
+	apellido: Gonzalez
+	cantGanados: 1
+
+	dni: 2
+	nombre: Luque
+	apellido: Perez
+	cantGanados: 1
+
+	dni: 3
+	nombre: Ian
+	apellido: Zorra
+	cantGanados: 0
+
+	dni: 4
+	nombre: Tito
+	apellido: Fuentes
+	cantGanados: 2
+	
+Campeonato 2:
+
+	dni: 1
+	nombre: Roque
+	apellido: Gonzalez
+	cantGanados: 1
+
+	dni: 3
+	nombre: Ian
+	apellido: Zorra
+	cantGanados: 0
+
+
+2- La cantidad de medallas por nombre de escuela en toda la historia
+
+	nombre: La cloaca de Miguel
+	Medallas:4
+
+	nombre: what the fox say
+	Medallas:1
+
+3- Para cada escuela, el campeonato donde ganó más medallas
+	nombre: La cloaca de Miguel
+	Campeonato: Campeonato 1
+
+	nombre: what the fox say
+	Campeonato: Campeonato 2
+
+
+4- Los árbitros que participaron en al menos 4 campeonatos
+Resultado: 
+
+Arbitro 1:
+	nro_placa: 1
+	nombre: Alberto
+	apelldo: Azo
+	graduacion: 6
+	Competencias: 
+	Campeonatos: 1,2,3,4,5
+
+
+5- Las escuelas que han presentado el mayor número de competidores en cada campe-
+onato.
+
+	Campeonato: Campeonato 1
+	EscelaMasCompetidores: La cloaca de Miguel
+
+	Campeonato: Campeonato 2
+	EscelaMasCompetidores: La cloaca de Miguel , what the fox say
+
+
+6- Obtener los competidores que más medallas obtuvieron por modalidad.
+
+	id_modalidad: 1
+	modo: Formas
+	CompConMasMedallas: 1,2,4
+
+	id_modalidad: 2
+	modo: Combate
+	CompConMasMedallas: 1,3
