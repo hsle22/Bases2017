@@ -1,6 +1,6 @@
 [
-{"competidor_dni": "1", "escuela":"1", "nombre": "Roque","apellido": "Gonzales", "foto": "esta1", "fecha_nacimiento": "1994-07-17", "nro_itf": "1", "graduacion":"3", "peso":"75","medalleroPorModalidad":[],"medalleroPorCampeonato":[]},
-{"competidor_dni": "2", "escuela":"1", "nombre": "Luque","apellido": "Perez", "foto": "esta2", "fecha_nacimiento": "1994-06-17", "nro_itf": "2", "graduacion":"3", "peso":"74","medalleroPorModalidad":[],"medalleroPorCampeonato":[]},
-{"competidor_dni": "3", "escuela":"2", "nombre": "Ian","apellido": "Zorra", "foto": "esta3", "fecha_nacimiento": "1994-04-17", "nro_itf": "3", "graduacion":"3", "peso":"75","medalleroPorModalidad":[],"medalleroPorCampeonato":[]},
-{"competidor_dni": "4", "escuela":"1", "nombre": "Tito","apellido": "Fuentes", "foto": "esta4", "fecha_nacimiento": "1994-02-17", "nro_itf": "4", "graduacion":"3", "peso":"75","medalleroPorModalidad":[],"medalleroPorCampeonato":[]}
+{"competidor_dni": "1", "escuela":"1", "nombre": "Roque","apellido": "Gonzales", "foto": "esta1", "fecha_nacimiento": "1994-07-17", "nro_itf": "1", "graduacion":"3", "peso":"75","medalleroPorModalidad":[{"id_modalidad" : "2"}],"medalleroPorCampeonato":[{"id_campeonato" : "1" , "id_campeonato" : "2"}]},
+{"competidor_dni": "2", "escuela":"1", "nombre": "Luque","apellido": "Perez", "foto": "esta2", "fecha_nacimiento": "1994-06-17", "nro_itf": "2", "graduacion":"3", "peso":"74","medalleroPorModalidad":[],"medalleroPorCampeonato":[{"id_campeonato" : "1"}]},
+{"competidor_dni": "3", "escuela":"2", "nombre": "Ian","apellido": "Zorra", "foto": "esta3", "fecha_nacimiento": "1994-04-17", "nro_itf": "3", "graduacion":"3", "peso":"75","medalleroPorModalidad":[],"medalleroPorCampeonato":[{"id_campeonato" : "2"}]},
+{"competidor_dni": "4", "escuela":"1", "nombre": "Tito","apellido": "Fuentes", "foto": "esta4", "fecha_nacimiento": "1994-02-17", "nro_itf": "4", "graduacion":"3", "peso":"75","medalleroPorModalidad":[{"id_modalidad" : "1"}],"medalleroPorCampeonato":[{"id_campeonato" : "1"}]}
 ]
