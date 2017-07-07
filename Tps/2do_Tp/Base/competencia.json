@@ -1,0 +1,10 @@
+[
+{"id_compentencia": "1", "descripcion": "tuvieja123", "Campeonatos": [{"campeonato_id": "1", "campeonato_nombre":"Campeonato 1"}],"modalidad":"1", "arbitros": [{"nro_placa": "1"}, {"nro_placa": "2"}], 
+"encuentros": [{"encuentro_id": "1"}, {"encuentro_id": "2"}, {"encuentro_id": "3"}, {"encuentro_id": "4"}],
+"encuentrosGanadores": [{"competidor_dni": "1", "gano":"1"}, {"competidor_dni": "3", "gano":"0"}, {"competidor_dni": "2", "gano":"1"}, {"competidor_dni": "1", "gano":"0"}, {"competidor_dni": "4", "gano":"1"}]
+},
+{"id_compentencia": "2", "descripcion": "tuvieja321", "Campeonatos": [{"campeonato_id": "2", "campeonato_nombre":"Campeonato 2"}],"modalidad":"2", "arbitros": [{"nro_placa": "1"}], 
+"encuentros": [{"encuentro_id": "5"}],
+"encuentrosGanadores": [{"competidor_dni": "1", "gano":"1"}, {"competidor_dni": "3", "gano":"0"}]
+}
+]

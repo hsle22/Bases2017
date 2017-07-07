@@ -1,7 +1,7 @@
 [
-{"fecha_inicio": "2012-10-20", "fecha_fin": "2012-11-20", "id_campeonato": "1", "nombre": "Campeonato 1", "competencias": [{"competencia_id": "1"}], "escuelas": [{"escuela_id": "1"}, {"escuela_id": "2"}], "arbitros": [{"arbitro_id": "1"}, {"arbitro_id": "2"}]},
-{"fecha_inicio": "2013-10-20", "fecha_fin": "2013-11-20", "id_campeonato": "2", "nombre": "Campeonato 2", "competencias": [{"competencia_id": "2"}], "escuelas": [{"escuela_id": "1"}, {"escuela_id": "2"}], "arbitros": [{"arbitro_id": "1"}]},
-{"fecha_inicio": "2014-10-20", "fecha_fin": "2014-11-20", "id_campeonato": "3", "nombre": "Campeonato 3", "competencias": [], "escuelas": [{"escuela_id": "1"}, {"escuela_id": "2"}], "arbitros": [{"arbitro_id": "1"}]},
-{"fecha_inicio": "2015-10-20", "fecha_fin": "2015-11-20", "id_campeonato": "4", "nombre": "Campeonato 4", "competencias": [], "escuelas": [{"escuela_id": "1"}, {"escuela_id": "2"}], "arbitros": [{"arbitro_id": "1"}]},
-{"fecha_inicio": "2016-10-20", "fecha_fin": "2016-11-20", "id_campeonato": "5", "nombre": "Campeonato 5", "competencias": [], "escuelas": [{"escuela_id": "1"}, {"escuela_id": "2"}], "arbitros": [{"arbitro_id": "1"}]}
+{"fecha_inicio": "2012-10-20", "fecha_fin": "2012-11-20", "id_campeonato": "1", "nombre": "Campeonato 1", "competencias": [{"competencia_id": "1"}], "escuelas": [{"escuela_id": "1"}, {"escuela_id": "2"}], "arbitros": [{"nro_placa": "1"}, {"nro_placa": "2"}]},
+{"fecha_inicio": "2013-10-20", "fecha_fin": "2013-11-20", "id_campeonato": "2", "nombre": "Campeonato 2", "competencias": [{"competencia_id": "2"}], "escuelas": [{"escuela_id": "1"}, {"escuela_id": "2"}], "arbitros": [{"nro_placa": "1"}]},
+{"fecha_inicio": "2014-10-20", "fecha_fin": "2014-11-20", "id_campeonato": "3", "nombre": "Campeonato 3", "competencias": [], "escuelas": [{"escuela_id": "1"}, {"escuela_id": "2"}], "arbitros": [{"nro_placa": "1"}]},
+{"fecha_inicio": "2015-10-20", "fecha_fin": "2015-11-20", "id_campeonato": "4", "nombre": "Campeonato 4", "competencias": [], "escuelas": [{"escuela_id": "1"}, {"escuela_id": "2"}], "arbitros": [{"nro_placa": "1"}]},
+{"fecha_inicio": "2016-10-20", "fecha_fin": "2016-11-20", "id_campeonato": "5", "nombre": "Campeonato 5", "competencias": [], "escuelas": [{"escuela_id": "1"}, {"escuela_id": "2"}], "arbitros": [{"nro_placa": "1"}]}
 ]
