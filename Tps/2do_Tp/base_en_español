@@ -118,28 +118,29 @@ Modalidad 1: //
 	modo: Formas
 	edad_minima: 15
 	edad_maxima: 21
-	peso_minima: 70
+	peso_minimo: 70
 	peso_maximo: 80
 	genero: Masculino
 	graduacion: 2
+	Competencias: 1
 
 Modalidad 2: //
 	id_modalidad: 2
 	modo: Combate
 	edad_minima: 15
 	edad_maxima: 21
-	peso_minima: 70
+	peso_minimo: 70
 	peso_maximo: 80
 	genero: Masculino
 	graduacion: 2
-
+	Competencias: 2
 
 Arbitro 1: //
 	nro_placa: 1
 	nombre: Alberto
 	apelldo: Azo
 	graduacion: 6
-	Competencias: 
+	Competencias: 1,2
 	Campeonatos: 1,2,3,4,5
 
 Arbitro 2: //
@@ -147,7 +148,7 @@ Arbitro 2: //
 	nombre: Sueirdo
 	apelldo: Helen
 	graduacion: 6
-	Competencias: 
+	Competencias: 1
 	Campeonatos: 1
 	
 Encuentro 1:
