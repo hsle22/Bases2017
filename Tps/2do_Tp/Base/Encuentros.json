@@ -1,0 +1,7 @@
+[
+{"id_encuentro": "1", "nro_encuentro": "1" , "compA": "1", "nombreA": "Roque", "apellidoA": "Gonzalez",  "compB": "2", "nombreB": "Luque", "apellidoB": "Perez", "ganador": "1" , "nombreGanador" : "Roque" , "apellidoGanador" : "Gonzalez"},
+{"id_encuentro": "2", "nro_encuentro": "2" , "compA": "3", "nombreA": "Ian", "apellidoA": "Zorra",  "compB": "4", "nombreB": "Tito", "apellidoB": "Fuentes", "ganador": "4" , "nombreGanador" : "Tito" , "apellidoGanador" : "Fuentes"},
+{"id_encuentro": "3", "nro_encuentro": "3" , "compA": "3", "nombreA": "Ian", "apellidoA": "Zorra",  "compB": "2", "nombreB": "Luque", "apellidoB": "Perez", "ganador": "2" , "nombreGanador" : "Luque" , "apellidoGanador" : "Perez"},
+{"id_encuentro": "4", "nro_encuentro": "4" , "compA": "1", "nombreA": "Roque", "apellidoA": "Gonzalez",  "compB": "4", "nombreB": "Tito", "apellidoB": "Fuentes", "ganador": "4" , "nombreGanador" : "Tito" , "apellidoGanador" : "Fuentes"},
+{"id_encuentro": "5", "nro_encuentro": "1" , "compA": "1", "nombreA": "Roque", "apellidoA": "Gonzalez",  "compB": "3", "nombreB": "Ian", "apellidoB": "Zorra", "ganador": "1" , "nombreGanador" : "Roque" , "apellidoGanador" : "Gonzalez"}
+]
