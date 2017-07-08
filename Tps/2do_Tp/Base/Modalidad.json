@@ -1,4 +1,4 @@
 [
-{"id_modalidad": "1", "modo": "Formas" , "edad_minima": 15, "edad_maxima": 20,"peso_minimo": 70, "peso_maximo": 80, "genero": "Masculino", "graduacion": "2" , "competencias":[{"id_competencia": "1"}]},
-{"id_modalidad": "2", "modo": "Combate" , "edad_minima": 15, "edad_maxima": 20,"peso_minimo": 70, "peso_maximo": 80, "genero": "Masculino", "graduacion": "2" , "competencias":[{"id_competencia": "2"}]}
+{"id_modalidad": 1, "modo": "Formas" , "edad_minima": 15, "edad_maxima": 20,"peso_minimo": 70, "peso_maximo": 80, "genero": "Masculino", "graduacion": 2 , "competencias":[{"id_competencia": 1}]},
+{"id_modalidad": 2, "modo": "Combate" , "edad_minima": 15, "edad_maxima": 20,"peso_minimo": 70, "peso_maximo": 80, "genero": "Masculino", "graduacion": 2 , "competencias":[{"id_competencia": "2"}]}
 ]
