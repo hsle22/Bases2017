@@ -1,4 +1,10 @@
 [
-{"id_escuela" : "1" , "nombre":"La cloaca de Miguel" , "competidores":[{"campetidor_dni": "1" , "campetidor_dni": "2" , "campetidor_dni": "4",}]},
-{"id_escuela" : "2" , "nombre":"what the fox say" , "competidores":[{"campetidor_dni": "3"}]}
+{"id_escuela" : "1" , "nombre":"La cloaca de Miguel" , 
+"competidores":[ {"campetidor_dni": 1}, {"campetidor_dni": 2}, {"campetidor_dni": 4}],
+"cantMedallas":[ {"campeonato_id": 1, "medallas": 2}, {"campeonato_id": 2, "medallas": 1}]
+
+},
+{"id_escuela" : "2" , "nombre":"what the fox say" , "competidores":[{"campetidor_dni": "3"}],
+"cantMedallas":[ {"campeonato_id": 1, "medallas": 1}, {"campeonato_id": 2, "medallas": 3}]
+}
 ]

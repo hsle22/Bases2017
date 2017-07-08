@@ -1,4 +1,10 @@
 [
-{"nro_placa": 1, "nombre": "Alberto", "apellido": "Azo", "graduacion": 6 , "Competencias": [{"id_competencia" : "1","id_competencia": "2"}], "Campeonato": [{"id_campeonato" : "1" ,"id_campeonato" : "2" ,"id_campeonato" : "3" ,"id_campeonato" : "4" ,"id_campeonato" : "5" ,}] },
-{"nro_placa": 2, "nombre": "Helen", "apellido": "Sueirdo", "graduacion": 6 , "Competencias": [{"id_competencia" : "1"}], "Campeonato": [{"id_campeonato" : "1"}] }
+{"nro_placa": 1, "nombre": "Alberto", "apellido": "Azo", "graduacion": 6 , 
+"Competencias": [{"id_competencia" : 1},{"id_competencia": 2}], 
+"Campeonato": [{"id_campeonato" : 1} ,{"id_campeonato" : 2}, {"id_campeonato" : 3},{"id_campeonato" : 4} ,{"id_campeonato" : 5 }] 
+},
+{"nro_placa": 2, "nombre": "Helen", "apellido": "Sueirdo", "graduacion": 6 , 
+"Competencias": [{"id_competencia" : 1}], 
+"Campeonato": [{"id_campeonato" : 1}] 
+}
 ]

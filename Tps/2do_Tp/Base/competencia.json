@@ -7,8 +7,8 @@
 	{"competidor_dni": 1, "gano":1}, 
 	{"competidor_dni": 3, "gano":0}, 
 	{"competidor_dni": 2, "gano":1}, 
-	{"competidor_dni": 1, "gano":0}, 
-	{"competidor_dni": 4, "gano":1}
+	{"competidor_dni": 1, "gano":3}, 
+	{"competidor_dni": 4, "gano":2}
 ]
 },
 {"id_compentencia": 2, "descripcion": "tuvieja321", "campeonato": {"campeonato_id": 2, "campeonato_nombre":"Campeonato 2"},
