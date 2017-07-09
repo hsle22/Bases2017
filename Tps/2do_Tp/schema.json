@@ -4,6 +4,12 @@
 		"id_escuela":{"type":"integer"},
 		"nombre":{"type":"string"},
 		"competidores":{"type":"array", "items":{"type":"integer"}},
+		"cantMedallas":{
+			"type":"array",
+			"items":{
+				"type":"array",
+				"items":["campeonato_id":{"type":"integer"}, "medallas":{"type":"integer"}]
+			}
 	},
 	"requiered":["id_escuela", "nombre"]
 }
@@ -21,11 +27,6 @@
 		"graduacion":{"type":"integer"},
 		"fecha_nacimiento":{"type":"string", "format": "date-time"},
 		"peso":{"type":"number"},
-		"medalleroPorModalidad":{
-			"type":"array",
-			"items":{"type":"integer"}
-			
-		},
 		"medalleroPorCampeonato":{
 			"type":"array",
 			"properties":{
@@ -51,7 +52,8 @@
 		"peso_maximo":{"type":"integer"},
 		"genero":{"type":"string"},
 		"graduacion":{"type":"integer"},
-		"competencias":{"type":"array", "items":{"type":"integer"}},
+		"CompetidorEnMedalleroHistorico":{"type":"array", "items":{"type":"integer"}},
+		"competencias":{"type":"array", "items":{"type":"integer"}}
 	}
 }
 
@@ -93,7 +95,7 @@
 		"fecha_inicio":{"type":"string", "format": "date-time"},
 		"fecha_fin":{"type":"string", "format": "date-time"},
 		"competencias":{"type":"array", "items":{"type":"integer"}},
-		"escuelas":{"type":"array", "items":{"type":"integer"}},
+		"escuelas":{"type":"array", "items":["id_escuela":{"type":"integer"}, "CantidadDeInscriptos":{"type":"integer"}]},
 		"arbitros":{"type":"array", "items":{"type":"integer"}},
 	},
 	"requiered":["id_campeonato", "fecha_inicio", "fecha_fin"]
