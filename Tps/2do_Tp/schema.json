@@ -4,6 +4,7 @@
 		"id_escuela":{"type":"integer"},
 		"nombre":{"type":"string"},
 		"competidores":{"type":"array", "items":{"type":"integer"}},
+		"compeonatos":{"type":"array", "items":{"type":"integer"}},
 		"cantMedallas":{
 			"type":"array",
 			"items":{
@@ -123,7 +124,7 @@
 	"properties": {
 		"id_competencia":{"type":"integer"},
 		"id_compeonato":{"type":"integer"},
-		"nro_encuetro":{"type":"integer"},
+		"nro_encuentro":{"type":"integer"},
 		"competidorA":{"type":"integer"},
 		"competidorB":{"type":"integer"},
 		"ganador":{"type":"integer"},
