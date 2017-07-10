@@ -28,10 +28,12 @@ int main(int argc, char *argv[])
    //fprintf( fichero, "%s \n", competidor, i );
    //fprintf( fichero, "\t 2\t 3\t 4\n" );
    //fprintf( fichero, "x\tx\tx\tx\n\n" );
-   for( i=inicio; i<=cantidad; i++ )
+   fprintf( fichero, "r.db('TAEKWONDO').table('competidor').insert([" );
+   for( i=inicio; i<=cantidad+inicio; i++ )
 	fprintf( fichero, "{'competidor_dni': %d, 'escuela':1, 'nombre': 'Roque','apellido': 'Gonzales', 'foto': 'esta1', 'fecha_nacimiento': '1994-07-17', 'nro_itf': 1, 'graduacion':3, 'peso':75, 'medalleroPorModalidad':[{'id_modalidad' : 2}],'medalleroPorCampeonato':[]}, \n", i );
       //fprintf( fichero, "%d\t%d\t%d\t%d\n", i, i*i, i*i*i, i*i*i*i );
 
+   fprintf( fichero, "]);" );
    fprintf( stdout, "Datos guardados en el fichero: %s\n", nombre );
    if( !fclose(fichero) )
       printf( "Fichero cerrado\n" );
