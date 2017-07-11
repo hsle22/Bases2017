@@ -1,5 +1,5 @@
 1)
-r.db('TAEKWONDO').table('competencia').filter(function (c) { return c("campeonato")("campeonato_id").eq(2);})
+r.db('TAEKWONDO').table('Competencia').filter(function (c) { return c("campeonato")("campeonato_id").eq(1);})
 .concatMap(function (elem){
   return elem('encuentrosGanadores');
 }).group(r.row('competidor_dni')).ungroup().map(
@@ -13,16 +13,16 @@ r.db('TAEKWONDO').table('competencia').filter(function (c) { return c("campeonat
 );
 
 2)
-r.db('TAEKWONDO').table('Escuela').map(function(elem) {return {id: elem('id_escuela') , nombre: elem('nombre') , cantidadTotal: elem('cantMedallas').sum('medallas')}});
+r.db('TAEKWONDO').table('Escuela').map(function(elem) {return {id: elem('id_escuela') , nombre: elem('nombre') , cantidadTotal: elem('cantMedallasPorCampeonato').sum('medallas')}});
 
 3)r.db('TAEKWONDO').table('Escuela').map(function(elem) 
-{var res = elem('cantMedallas').max('medallas');
+{var res = elem('cantMedallasPorCampeonato').max('medallas');
 return {id: elem('id_escuela') , nombre: elem('nombre') , campeonatoMasMedallas: res('campeonato_id')}});
 
-4)r.db('TAEKWONDO').table('Arbitro').filter( function(elem)
+4)r.db('TAEKWONDO').table('Arbitros').filter( function(elem)
 {return elem('Campeonato').count().ge(4);});
 
-5)r.db('TAEKWONDO').table('campeonato').map(function(elem) 
+5)r.db('TAEKWONDO').table('Campeonato').map(function(elem) 
 {var res = elem('escuelas').max('CantidadDeInscriptos');
 return {id: elem('id_campeonato') , nombre: elem('nombre') , EscuelaConMayorCantInscript: res('escuela_id')}});
 
