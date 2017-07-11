@@ -22,6 +22,9 @@ return {id: elem('id_escuela') , nombre: elem('nombre') , campeonatoMasMedallas:
 4)r.db('TAEKWONDO').table('Arbitros').filter( function(elem)
 {return elem('Campeonato').count().ge(4);});
 
+4) con map reduce:
+r.db('TAEKWONDO').table('Arbitros').filter( function(momo) {return momo('Campeonato').map(function (elem) {return 1}).reduce(function(left,right) {return left.add(right);}).ge(4)});
+
 5)r.db('TAEKWONDO').table('Campeonato').map(function(elem) 
 {var res = elem('escuelas').max('CantidadDeInscriptos');
 return {id: elem('id_campeonato') , nombre: elem('nombre') , EscuelaConMayorCantInscript: res('escuela_id')}});
