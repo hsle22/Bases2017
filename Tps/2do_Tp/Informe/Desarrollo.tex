@@ -2,38 +2,3 @@
 
 %Dificultades surgidas en el tp, como se encararon, cambios que hubieron.
 %Se nos pide:
-Dado los requerimiento del enunciado tuvimos que agregar entidades, atributos a algunas de ellas y modificar algunas de sus relaciones, a continuación detallaremos los cambios realizados:
-\bftext{Entidad Campeonato}
-Para esto creamos la entidad Campeonato, que tendra los siguientes atributos:
-\begin{itemize}
-	\item id_campeonatos
-	\item nombre
-	\item fecha_inicio
-	\item fecha_fin
-\end{itemize}
-y las siguientes relaciones:
-\begin{itemize}
-	\item escuelas
-	\item arbitros
-	\item competencias
-\end{itemize}
-Historial de Competencias: con la relación "competencias", cada campeonato guardará la información de las competencia que hubo en ella.
-
-Historico de Arbitros: guardamos la asociacion de los arbitros que participaran en cada campeonato.
-
-Historico de Escuela: guardamos la asociacion de las escuelas inscriptas en el campeonato.
-
-\bftext{Entidad Competencia y Encuentro}
-Para esto creamos la entidad Campeonato, que tendra los siguientes atributos:
-Antes, en nuestro modelo guardabamos el puesto del competidor en la competencia que habia participado. Para cumplir con la nueva especificacion, hemos agregado la entidad "Encuentro", que guardará la siguiente información:
-\begin{itemize}
-	\item id_encuentro
-	\item nro_encuentro: número de encuentro en la competencia con la modalidad correspondiente.
-	\item competidorA: id del competidor
-	\item competidorB: id del competidor
-	\item ganador: id del competidor ganador 
-\end{itemize}
-de esta manera guardaremos la informacion de cada encuentro y puesto.
-Tambien con esta informacion se puede obtener el medallero de cada competencia.
-
-

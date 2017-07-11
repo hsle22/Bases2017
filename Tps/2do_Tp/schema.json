@@ -5,7 +5,7 @@
 		"nombre":{"type":"string"},
 		"competidores":{"type":"array", "items":{"type":"integer"}},
 		"compeonatos":{"type":"array", "items":{"type":"integer"}},
-		"cantMedallas":{
+		"cantMedallasPorCampeonato":{
 			"type":"array",
 			"items":{
 				"type":"array",
@@ -36,6 +36,13 @@
 			}
 		},
 		
+		"medalleroPorModalidad":{
+			"type":"array",
+			"properties":{
+				"type":"array",
+				"items":{"type":"integer"}
+			}
+		},
 	},
 	"requiered":["dni", "escuela"]
 }
@@ -53,8 +60,9 @@
 		"peso_maximo":{"type":"integer"},
 		"genero":{"type":"string"},
 		"graduacion":{"type":"integer"},
-		"CompetidorEnMedalleroHistorico":{"type":"array", "items":{"type":"integer"}},
 		"competencias":{"type":"array", "items":{"type":"integer"}}
+		"cantMaximaMedallas":{"type":"integer"},
+		"CompetidorEnMedalleroHistorico":{"type":"array", "items":{"type":"integer"}}
 	}
 }
 
@@ -123,18 +131,10 @@
 	"type":"object",
 	"properties": {
 		"id_competencia":{"type":"integer"},
-		"id_compeonato":{"type":"integer"},
 		"nro_encuentro":{"type":"integer"},
 		"competidorA":{"type":"integer"},
 		"competidorB":{"type":"integer"},
 		"ganador":{"type":"integer"},
-		"modalidad":{
-			"type":"object",
-			"properties":{
-				"id_modalidad":{"type":"integer"},
-				"modo":{"type":"string"},			
-			}
-		}
 	},
 	"requiered":["id_competencia", "nro_encuetro"]
 }
